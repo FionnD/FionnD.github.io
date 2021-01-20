@@ -1,0 +1,289 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jina REST API Specification &#8212; fionn_test 1 documentation</title>
+    
+  <link rel="stylesheet" href="../../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../../../../index.html">
+    
+      <p class="title">fionn_test</p>
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#interface" class="nav-link">Interface</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#post-an-indexrequest" class="nav-link">POST an IndexRequest</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#post-a-searchrequest" class="nav-link">POST a SearchRequest</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#remarks-on-post-port-expose-api-mode" class="nav-link">Remarks on POST :<port_expose>/api/<mode></a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#switching-from-grpc-gateway-to-rest-gateway" class="nav-link">Switching from gRPC gateway to REST gateway</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#in-python-api" class="nav-link">In Python API</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#in-yaml" class="nav-link">In YAML</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#in-gateway-s-cli-advanced" class="nav-link">In gateway’s CLI (advanced)</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#unsupported-features-in-rest-api" class="nav-link">Unsupported Features in REST API</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="jina-rest-api-specification">
+<h1>Jina REST API Specification<a class="headerlink" href="#jina-rest-api-specification" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use REST API support, you need to install jina via <strong class="command">pip install &quot;jina[http]&quot;</strong> or use the corresponding feature-enabled Docker image.</p>
+</div>
+<div class="section" id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="post-an-indexrequest">
+<h3>POST an IndexRequest<a class="headerlink" href="#post-an-indexrequest" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># POST an IndexRequest to `http://0.0.0.0:5555/api/index`</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;first_doc_id&quot;: 5, &quot;data&quot;: [&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA2ElEQVR4nADIADf/AxWcWRUeCEeBO68T3u1qLWarHqMaxDnxhAEaLh0Ssu6ZGfnKcjP4CeDLoJok3o4aOPYAJocsjktZfo4Z7Q/WR1UTgppAAdguAhR+AUm9AnqRH2jgdBZ0R+kKxAFoAME32BL7fwQbcLzhw+dXMmY9BS9K8EarXyWLH8VYK1MACkxlLTY4Eh69XfjpROqjE7P0AeBx6DGmA8/lRRlTCmPkL196pC0aWBkVs2wyjqb/LABVYL8Xgeomjl3VtEMxAeaUrGvnIawVh/oBAAD///GwU6v3yCoVAAAAAElFTkSuQmCC&quot;, &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA2ElEQVR4nADIADf/AvdGjTZeOlQq07xSYPgJjlWRwfWEBx2+CgAVrPrP+O5ghhOa+a0cocoWnaMJFAsBuCQCgiJOKDBcIQTiLieOrPD/cp/6iZ/Iu4HqAh5dGzggIQVJI3WqTxwVTDjs5XJOy38AlgHoaKgY+xJEXeFTyR7FOfF7JNWjs3b8evQE6B2dTDvQZx3n3Rz6rgOtVlaZRLvR9geCAxuY3G+0mepEAhrTISES3bwPWYYi48OUrQOc//IaJeij9xZGGmDIG9kc73fNI7eA8VMBAAD//0SxXMMT90UdAAAAAElFTkSuQmCC&quot;]}</span>
+<span class="s1">&#39; -v -i &#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">5555</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">index</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-a-searchrequest">
+<h3>POST a SearchRequest<a class="headerlink" href="#post-a-searchrequest" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># POST an SearchRequest to `http://0.0.0.0:5555/api/index`</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;top_k&quot;: 5, &quot;data&quot;: [&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA2ElEQVR4nADIADf/AxWcWRUeCEeBO68T3u1qLWarHqMaxDnxhAEaLh0Ssu6ZGfnKcjP4CeDLoJok3o4aOPYAJocsjktZfo4Z7Q/WR1UTgppAAdguAhR+AUm9AnqRH2jgdBZ0R+kKxAFoAME32BL7fwQbcLzhw+dXMmY9BS9K8EarXyWLH8VYK1MACkxlLTY4Eh69XfjpROqjE7P0AeBx6DGmA8/lRRlTCmPkL196pC0aWBkVs2wyjqb/LABVYL8Xgeomjl3VtEMxAeaUrGvnIawVh/oBAAD///GwU6v3yCoVAAAAAElFTkSuQmCC&quot;, &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAA2ElEQVR4nADIADf/AvdGjTZeOlQq07xSYPgJjlWRwfWEBx2+CgAVrPrP+O5ghhOa+a0cocoWnaMJFAsBuCQCgiJOKDBcIQTiLieOrPD/cp/6iZ/Iu4HqAh5dGzggIQVJI3WqTxwVTDjs5XJOy38AlgHoaKgY+xJEXeFTyR7FOfF7JNWjs3b8evQE6B2dTDvQZx3n3Rz6rgOtVlaZRLvR9geCAxuY3G+0mepEAhrTISES3bwPWYYi48OUrQOc//IaJeij9xZGGmDIG9kc73fNI7eA8VMBAAD//0SxXMMT90UdAAAAAElFTkSuQmCC&quot;]}</span>
+<span class="s1">&#39; -v -i &#39;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">5555</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">search</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remarks-on-post-port-expose-api-mode">
+<h3>Remarks on POST <strong class="command">:&lt;port_expose&gt;/api/&lt;mode&gt;</strong><a class="headerlink" href="#remarks-on-post-port-expose-api-mode" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;mode&gt;</span></code> should be one of <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">search</span></code></p></li>
+<li><p>MIME type should be <code class="docutils literal notranslate"><span class="pre">application/json</span></code></p></li>
+<li><p>the content should at least have the <code class="docutils literal notranslate"><span class="pre">data</span></code> field, which contains a
+list of data URI, each corresponds to one document.</p></li>
+<li><p>You can specify other arguments in the request. For example,
+<code class="docutils literal notranslate"><span class="pre">top_k</span></code>, <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>, <code class="docutils literal notranslate"><span class="pre">first_doc_id</span></code>. The full list can be
+<a class="reference external" href="../cli/jina-client.html#client-specific%20arguments">found in here</a>. Please note that not all arguments are supported on
+the REST API level at the moment.</p></li>
+<li><p>The REST endpoint will be served at <code class="docutils literal notranslate"><span class="pre">port_expose</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="switching-from-grpc-gateway-to-rest-gateway">
+<h2>Switching from gRPC gateway to REST gateway<a class="headerlink" href="#switching-from-grpc-gateway-to-rest-gateway" title="Permalink to this headline">¶</a></h2>
+<p>By default Jina uses gRPC as the gateway for receiving and sending
+requests from and to clients. Some users especially the frontend
+engineers may look for a RESTful API to communicate with Jina. This can
+be done by easily.</p>
+<div class="section" id="in-python-api">
+<h3>In Python API<a class="headerlink" href="#in-python-api" title="Permalink to this headline">¶</a></h3>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina.flow</span> <span class="k">import</span> <span class="n">Flow</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">Flow</span><span class="p">(</span><span class="n">rest_api</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+                        <span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note that you can not use <code class="docutils literal notranslate"><span class="pre">f.index</span></code>, <code class="docutils literal notranslate"><span class="pre">f.search</span></code> and <code class="docutils literal notranslate"><span class="pre">f.train</span></code> here
+anymore. These IO interface are based on Python client, which uses gRPC
+behind the scene. You should use Javascript or Node and send HTTP
+request to communicate with this Flow instead.</p>
+<p>To block a Flow, use <code class="docutils literal notranslate"><span class="pre">block()</span></code></p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">block</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-yaml">
+<h3>In YAML<a class="headerlink" href="#in-yaml" title="Permalink to this headline">¶</a></h3>
+<div class="code yaml highlight-default notranslate"><div class="highlight"><pre><span></span>!Flow
+with:
+    rest_api: true
+</pre></div>
+</div>
+<p>And then either load it in Python via <code class="docutils literal notranslate"><span class="pre">Flow.load_config('my.yml')</span></code> or
+via CLI: <code class="docutils literal notranslate"><span class="pre">jina</span> <span class="pre">flow</span> <span class="pre">--yaml-path</span> <span class="pre">my.yml</span></code></p>
+</div>
+<div class="section" id="in-gateway-s-cli-advanced">
+<h3>In gateway’s CLI (advanced)<a class="headerlink" href="#in-gateway-s-cli-advanced" title="Permalink to this headline">¶</a></h3>
+<p>Most of the cases you just need to set <code class="docutils literal notranslate"><span class="pre">rest-api</span></code> on the Flow level.
+But in case you need to start a separate gateway with <code class="docutils literal notranslate"><span class="pre">rest_api</span></code>
+enabled. You can do:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">gateway</span> <span class="o">--</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="unsupported-features-in-rest-api">
+<h2>Unsupported Features in REST API<a class="headerlink" href="#unsupported-features-in-rest-api" title="Permalink to this headline">¶</a></h2>
+<p>In the current version, the following features are only supported by
+gRPC interface not by REST API. We are continuously improving it.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in_proto</span></code> is not supported. You can not send raw binary Protobuf
+documents to Jina using REST API interface.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callback_on_body</span></code> is not supported.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">batch_size</span></code> is not supported. As it will break one request into
+multiple responses.</p></li>
+<li><p>REST gateway does not do prefetching. There will be no bi-directional streaming. Internally, REST gateway communicate with Pod in async way, this is the same as in gRPC gateway. However, only after <em>all</em> results are finished, will the REST gateway return the results. This is different than the gRPC gateway, where the results are streamed in an async way.</p></li>
+<li><p>Please pay attention to the case transformation on the keys in the JSON payload returned. <cite>doc_id</cite> defined in gRPC protobuf will be returned as <cite>docId</cite> in JSON.</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../../../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2021, fionn.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

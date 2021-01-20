@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>HTTP Routing Table &mdash; fionn_test 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+ 
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> fionn_test
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fionn_test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>HTTP Routing Table</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+
+   <h1>HTTP Routing Table</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-/"><strong>/</strong></a> | 
+   <a href="#cap-/flows"><strong>/flows</strong></a> | 
+   <a href="#cap-/peas"><strong>/peas</strong></a> | 
+   <a href="#cap-/pods"><strong>/pods</strong></a> | 
+   <a href="#cap-/status"><strong>/status</strong></a> | 
+   <a href="#cap-/workspaces"><strong>/workspaces</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/"><td></td><td>
+       <strong>/</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--"><code class="xref">GET /</code></a></td><td>
+       <em>Home</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/flows"><td></td><td>
+       <strong>/flows</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--flows"><code class="xref">GET /flows</code></a></td><td>
+       <em>Get all alive Flows&#39; status</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--flows-arguments"><code class="xref">GET /flows/arguments</code></a></td><td>
+       <em>Get all accept arguments of a Flow</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--flows-id"><code class="xref">GET /flows/{id}</code></a></td><td>
+       <em>Get the status of a running Flow</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#post--flows"><code class="xref">POST /flows</code></a></td><td>
+       <em>Creat a Flow from a YAML config</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--flows-all"><code class="xref">DELETE /flows/all</code></a></td><td>
+       <em>Terminate all running Flows</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--flows-id"><code class="xref">DELETE /flows/{id}</code></a></td><td>
+       <em>Terminate a running Flow</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/peas"><td></td><td>
+       <strong>/peas</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--peas"><code class="xref">GET /peas</code></a></td><td>
+       <em>Get all alive Pea&#39; status</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--peas-arguments"><code class="xref">GET /peas/arguments</code></a></td><td>
+       <em>Get all accept arguments of a Pea</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--peas-id"><code class="xref">GET /peas/{id}</code></a></td><td>
+       <em>Get status of a running Pea</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#post--peas"><code class="xref">POST /peas</code></a></td><td>
+       <em>Create a Pea</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--peas-all"><code class="xref">DELETE /peas/all</code></a></td><td>
+       <em>Terminate all running Peas</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--peas-id"><code class="xref">DELETE /peas/{id}</code></a></td><td>
+       <em>Terminate a running Pea</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/pods"><td></td><td>
+       <strong>/pods</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--pods"><code class="xref">GET /pods</code></a></td><td>
+       <em>Get all alive Pods&#39; status</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--pods-arguments"><code class="xref">GET /pods/arguments</code></a></td><td>
+       <em>Get all accept arguments of a Pod</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--pods-id"><code class="xref">GET /pods/{id}</code></a></td><td>
+       <em>Get status of a running Pod</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#post--pods"><code class="xref">POST /pods</code></a></td><td>
+       <em>Create a Pod</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--pods-all"><code class="xref">DELETE /pods/all</code></a></td><td>
+       <em>Terminate all running Pods</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--pods-id"><code class="xref">DELETE /pods/{id}</code></a></td><td>
+       <em>Terminate a running Pod</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/status"><td></td><td>
+       <strong>/status</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--status"><code class="xref">GET /status</code></a></td><td>
+       <em>Get the status of the daemon</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/workspaces"><td></td><td>
+       <strong>/workspaces</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--workspaces"><code class="xref">GET /workspaces</code></a></td><td>
+       <em>Get all existing Workspaces&#39; status</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#get--workspaces-id"><code class="xref">GET /workspaces/{id}</code></a></td><td>
+       <em>Get the status of an existing Workspace</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#post--workspaces"><code class="xref">POST /workspaces</code></a></td><td>
+       <em>Create a Workspace and upload files to it</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--workspaces-all"><code class="xref">DELETE /workspaces/all</code></a></td><td>
+       <em>Deleting all Workspaces</em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="daemon.html#delete--workspaces-id"><code class="xref">DELETE /workspaces/{id}</code></a></td><td>
+       <em>Deleting an existing Workspace</em></td></tr>
+   </table>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, fionn.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
