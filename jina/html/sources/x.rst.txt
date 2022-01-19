@@ -1,4 +1,0 @@
-Hello world_2
-
-.. openapi:: specs/jina2.yml
-  :examples: 
