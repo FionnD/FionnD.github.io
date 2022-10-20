@@ -78,27 +78,92 @@
     }
     // /Hide Mobile menu
 
+    function ajaxLoader() {
+        // Check for hash value in URL
+        var ajaxLoadedContent = $('#page-ajax-loaded');
+
+        function showContent() {
+            ajaxLoadedContent.removeClass('rotateOutDownRight closed');
+            ajaxLoadedContent.show();
+            $('body').addClass('ajax-page-visible');
+        }
+
+        function hideContent() {
+            $('#page-ajax-loaded').addClass('rotateOutDownRight closed');
+            $('body').removeClass('ajax-page-visible');
+            setTimeout(function(){
+                $('#page-ajax-loaded.closed').html('');
+                ajaxLoadedContent.hide();
+            }, 500);
+        }
+
+        var href = $('.ajax-page-load').each(function(){
+            href = $(this).attr('href');
+            if(location.hash == location.hash.split('/')[0] + '/' + href.substr(0,href.length-5)){
+                var toLoad =  $(this).attr('href');
+                showContent();
+                ajaxLoadedContent.load(toLoad);
+                return false;
+            }
+        });
+
+        $(document)
+            .on("click",".site-main-menu, #ajax-page-close-button", function (e) { // Hide Ajax Loaded Page on Navigation cleck and Close button
+                e.preventDefault();
+                hideContent();
+                location.hash = location.hash.split('/')[0];
+            })
+            .on("click",".ajax-page-load", function () { // Show Ajax Loaded Page
+                var hash = location.hash.split('/')[0] + '/' + $(this).attr('href').substr(0,$(this).attr('href').length-5);
+                location.hash = hash;
+                showContent();
+
+                return false;
+            });
+    }
+
+    function scrollTop() {
+        if ($(window).scrollTop() > 150) {
+            $('.lmpixels-scroll-to-top').removeClass('hidden');
+        } else {
+            $('.lmpixels-scroll-to-top').addClass('hidden');
+        }
+    }
+
     //On Window load & Resize
     $(window)
         .on('load', function() { //Load
             // Animation on Page Loading
             $(".preloader").fadeOut( 800, "linear" );
-
-            // initializing page transition.
-            var ptPage = $('.subpages');
-            if (ptPage[0]) {
-                PageTransitions.init({
-                    menu: 'ul.site-main-menu',
-                });
-            }
         })
         .on('resize', function() { //Resize
-             mobileMenuHide();
+            mobileMenuHide();
+        })
+        .scroll(function () {
+            scrollTop();
         });
 
 
     // On Document Load
     $(document).on('ready', function() {
+        // Page Scroll to id fn call //
+        var offset = 0;
+        if ($(window).width() < 992) {
+            offset = 25;
+        }
+        $(".pt-trigger").mPageScroll2id({
+            layout:"vertical",
+            highlightClass: "active",
+            keepHighlightUntilNext: false,
+            scrollSpeed: 880,
+            scrollEasing: "easeInOutExpo",
+            scrollingEasing: "easeInOutCirc",
+            clickedClass: "",
+            appendHash: true,
+            offset: offset,
+            forceSingleHighlight: true,
+        }); 
+
         // Initialize Portfolio grid
         var $portfolio_container = $(".portfolio-grid");
         $portfolio_container.imagesLoaded(function () {
@@ -275,6 +340,25 @@
         $("#map").addMarker({
             address: "S601 Townsend Street, San Francisco, California, USA", // Your Address. Change it
         });
+
+
+        $('.lmpixels-scroll-to-top').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
+
+        window.onhashchange = function(event) {
+            if(location.hash) {
+                ajaxLoader();
+            }
+        };
+
+        $('body').append('<div id="page-ajax-loaded" class="page-ajax-loaded animated rotateInDownRight"></div>');
+        ajaxLoader();
+
+        scrollTop();
     });
 
 })(jQuery);
