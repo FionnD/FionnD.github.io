@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Spencer Sharp</title>
+        <link>https://fionn.xyz</link>
+        <description>Your blog description</description>
+        <lastBuildDate>Thu, 20 Oct 2022 09:49:27 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Spencer Sharp</title>
+            <url>https://fionn.xyz/favicon.ico</url>
+            <link>https://fionn.xyz</link>
+        </image>
+        <copyright>All rights reserved 2022</copyright>
+        <item>
+            <title><![CDATA[Introducing Animaginary: High performance web animations]]></title>
+            <link>https://fionn.xyz/articles/introducing-animaginary</link>
+            <guid>https://fionn.xyz/articles/introducing-animaginary</guid>
+            <pubDate>Fri, 02 Sep 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.]]></description>
+            <content:encoded><![CDATA[<p>When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.</p>
+<p>To make this possible, we needed to squeeze every drop of performance out of the browser possible. And so Animaginary was born.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> animate <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">&#x27;@planetaria/animaginary&#x27;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">MyComponent</span></span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> open<span class="token punctuation">,</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>animate<span class="token punctuation">.</span><span class="token property-access">div</span>
+      <span class="token keyword">in</span><span class="token operator">=</span><span class="token punctuation">{</span>open<span class="token punctuation">}</span>
+      animateFrom<span class="token operator">=</span><span class="token string">&quot;opacity-0 scale-95&quot;</span>
+      animateTo<span class="token operator">=</span><span class="token string">&quot;opacity-100 scale-100&quot;</span>
+      duration<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">350</span><span class="token punctuation">}</span>
+    <span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>animate<span class="token punctuation">.</span><span class="token property-access">div</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Animaginary is our new web animation library that redefines what you thought was possible on the web. Hand-written in optimized WASM, Animaginary can even animate the <code>height</code> property of an element at 60fps.</p>
+<h2>Sermone fata</h2>
+<p>Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
+in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
+variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
+torquere temptata, erit maneat et ramos, <a href="#">iam</a> ait dominari
+potitus! Tibi litora matremque fumantia condi radicibus opusque.</p>
+<p>Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
+levitate quas ubi arcum ripas oculos abest. Adest <a href="#">commissaque
+victae</a> in gemitus nectareis ire diva
+dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
+nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
+nil utinam paternos ima, commentaque.</p>
+<pre class="language-c"><code class="language-c">exbibyte_wins <span class="token operator">=</span> <span class="token function">gigahertz</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grayscaleUtilityClient <span class="token operator">=</span> control_uat<span class="token punctuation">;</span>
+pcmciaHibernate <span class="token operator">=</span> <span class="token function">oop_virus_console</span><span class="token punctuation">(</span>text_mountain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>stateWaisFirewire <span class="token operator">&gt;=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    jfs <span class="token operator">=</span> <span class="token number">647065</span> <span class="token operator">/</span> <span class="token function">ldapVrml</span><span class="token punctuation">(</span>tutorialRestore<span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    metal_runtime_parse <span class="token operator">=</span> roomComputingResolution <span class="token operator">-</span> toolbarUpload <span class="token operator">+</span>
+            ipx_nvram_open<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    maximizeSidebar <span class="token operator">*=</span> <span class="token function">suffix_url</span><span class="token punctuation">(</span>flatbed <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">,</span> requirements_encoding_node <span class="token operator">+</span>
+            only_qbe_media<span class="token punctuation">,</span> minicomputer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc
+oscula nomina pignora corpus deserat.</p>
+<h2>Lethaei Pindumve me quae dinumerat Pavor</h2>
+<p>Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
+divite: et ille illa furit sim verbis Cyllenius.</p>
+<ol>
+<li>Captus inpleverunt collo</li>
+<li>Nec nam placebant</li>
+<li>Siquos vulgus</li>
+<li>Dictis carissime fugae</li>
+<li>A tacitos nulla viginti</li>
+</ol>
+<p>Ungues fistula annoso, ille addit linoque motatque uberior verso
+<a href="#">rubuerunt</a> confine desuetaque. <em>Sanguine</em> anteit
+emerguntque expugnacior est pennas iniqui ecce <strong>haeret</strong> genus: peiora imagine
+fossas Cephisos formosa! Refugitque amata <a href="#">refelli</a>
+supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
+regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
+ars talis.</p>
+<pre class="language-c"><code class="language-c">digital<span class="token punctuation">.</span>webcam_dual_frequency <span class="token operator">=</span> webmasterMms<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">+</span> language_standalone_google<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cc_inbox_layout <span class="token operator">*=</span> file_character<span class="token punctuation">;</span>
+    task <span class="token operator">+=</span> p<span class="token punctuation">;</span>
+    lockUnicode <span class="token operator">+=</span> <span class="token function">enterprise_monochrome</span><span class="token punctuation">(</span>tokenFunctionPersonal<span class="token punctuation">,</span> keyVirtual<span class="token punctuation">,</span>
+            adf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">windows_binary_esports</span><span class="token punctuation">(</span><span class="token number">87734</span><span class="token punctuation">,</span> <span class="token function">array</span><span class="token punctuation">(</span>restoreRomTopology<span class="token punctuation">,</span> <span class="token function">adRaw</span><span class="token punctuation">(</span><span class="token number">407314</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        dongleBashThumbnail<span class="token punctuation">)</span><span class="token punctuation">,</span> interpreter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
+proelia: illo patrio <em>esse summus</em>, enim sua serpentibus, Hyleusque. Est coniuge
+recuso; refert Coroniden ignotos manat, adfectu.</p>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[Rewriting the cosmOS kernel in Rust]]></title>
+            <link>https://fionn.xyz/articles/rewriting-the-cosmos-kernel-in-rust</link>
+            <guid>https://fionn.xyz/articles/rewriting-the-cosmos-kernel-in-rust</guid>
+            <pubDate>Thu, 14 Jul 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language, but it’s been a while since I’ve seen an article on the front page of Hacker News about rewriting some important tool in Go and I see articles on there about rewriting things in Rust every single week.]]></description>
+            <content:encoded><![CDATA[<p>When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language with a lot of benefits, but it’s been a while since I’ve seen an article on the front page of Hacker News about rewriting some important tool in Go and I see articles on there about rewriting things in Rust every single week.</p>
+<pre class="language-rust"><code class="language-rust"><span class="token keyword">use</span> <span class="token namespace">ferris_says<span class="token punctuation">::</span></span>say<span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>io<span class="token punctuation">::</span></span><span class="token punctuation">{</span>stdout<span class="token punctuation">,</span> <span class="token class-name">BufWriter</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> stdout <span class="token operator">=</span> <span class="token function">stdout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> message <span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">::</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">&quot;Hello fellow hackers&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> width <span class="token operator">=</span> message<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> writer <span class="token operator">=</span> <span class="token class-name">BufWriter</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span>stdout<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">say</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span><span class="token function">as_bytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> width<span class="token punctuation">,</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> writer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>I derive a large amount of my self-worth from whether or not Hacker News is impressed with the work I&#x27;m doing, so when I realized this, I cancelled all of our existing projects and started migrating everything to Rust immediately.</p>
+<h2>Sermone fata</h2>
+<p>Lorem markdownum, bracchia in redibam! Terque unda puppi nec, linguae posterior
+in utraque respicere candidus Mimasque formae; quae conantem cervice. Parcite
+variatus, redolentia adeunt. Tyrioque dies, naufraga sua adit partibus celanda
+torquere temptata, erit maneat et ramos, <a href="#">iam</a> ait dominari
+potitus! Tibi litora matremque fumantia condi radicibus opusque.</p>
+<p>Deus feram verumque, fecit, ira tamen, terras per alienae victum. Mutantur
+levitate quas ubi arcum ripas oculos abest. Adest <a href="#">commissaque
+victae</a> in gemitus nectareis ire diva
+dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
+nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
+nil utinam paternos ima, commentaque.</p>
+<pre class="language-c"><code class="language-c">exbibyte_wins <span class="token operator">=</span> <span class="token function">gigahertz</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grayscaleUtilityClient <span class="token operator">=</span> control_uat<span class="token punctuation">;</span>
+pcmciaHibernate <span class="token operator">=</span> <span class="token function">oop_virus_console</span><span class="token punctuation">(</span>text_mountain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>stateWaisFirewire <span class="token operator">&gt;=</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    jfs <span class="token operator">=</span> <span class="token number">647065</span> <span class="token operator">/</span> <span class="token function">ldapVrml</span><span class="token punctuation">(</span>tutorialRestore<span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    metal_runtime_parse <span class="token operator">=</span> roomComputingResolution <span class="token operator">-</span> toolbarUpload <span class="token operator">+</span>
+            ipx_nvram_open<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    maximizeSidebar <span class="token operator">*=</span> <span class="token function">suffix_url</span><span class="token punctuation">(</span>flatbed <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">,</span> requirements_encoding_node <span class="token operator">+</span>
+            only_qbe_media<span class="token punctuation">,</span> minicomputer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Aere repetiti cognataque natus. Habebat vela solutis saepe munus nondum adhuc
+oscula nomina pignora corpus deserat.</p>
+<h2>Lethaei Pindumve me quae dinumerat Pavor</h2>
+<p>Idem se saxa fata pollentibus geminos; quos pedibus. Est urnis Herses omnes nec
+divite: et ille illa furit sim verbis Cyllenius.</p>
+<ol>
+<li>Captus inpleverunt collo</li>
+<li>Nec nam placebant</li>
+<li>Siquos vulgus</li>
+<li>Dictis carissime fugae</li>
+<li>A tacitos nulla viginti</li>
+</ol>
+<p>Ungues fistula annoso, ille addit linoque motatque uberior verso
+<a href="#">rubuerunt</a> confine desuetaque. <em>Sanguine</em> anteit
+emerguntque expugnacior est pennas iniqui ecce <strong>haeret</strong> genus: peiora imagine
+fossas Cephisos formosa! Refugitque amata <a href="#">refelli</a>
+supplex. Summa brevis vetuere tenebas, hostes vetantis, suppressit, arreptum
+regna. Postquam conpescit iuvenis habet corpus, et erratica, perdere, tot mota
+ars talis.</p>
+<pre class="language-c"><code class="language-c">digital<span class="token punctuation">.</span>webcam_dual_frequency <span class="token operator">=</span> webmasterMms<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">+</span> language_standalone_google<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cc_inbox_layout <span class="token operator">*=</span> file_character<span class="token punctuation">;</span>
+    task <span class="token operator">+=</span> p<span class="token punctuation">;</span>
+    lockUnicode <span class="token operator">+=</span> <span class="token function">enterprise_monochrome</span><span class="token punctuation">(</span>tokenFunctionPersonal<span class="token punctuation">,</span> keyVirtual<span class="token punctuation">,</span>
+            adf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">windows_binary_esports</span><span class="token punctuation">(</span><span class="token number">87734</span><span class="token punctuation">,</span> <span class="token function">array</span><span class="token punctuation">(</span>restoreRomTopology<span class="token punctuation">,</span> <span class="token function">adRaw</span><span class="token punctuation">(</span><span class="token number">407314</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        dongleBashThumbnail<span class="token punctuation">)</span><span class="token punctuation">,</span> interpreter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Sit volat naturam; motu Cancri. Erat pro simul quae valuit quoque timorem quam
+proelia: illo patrio <em>esse summus</em>, enim sua serpentibus, Hyleusque. Est coniuge
+recuso; refert Coroniden ignotos manat, adfectu.</p>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[Thougths on the worlds sexiest job]]></title>
+            <link>https://fionn.xyz/articles/crafting-a-design-system-for-a-multiplanetary-future</link>
+            <guid>https://fionn.xyz/articles/crafting-a-design-system-for-a-multiplanetary-future</guid>
+            <pubDate>Wed, 14 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Advertised as the worlds sexiest job, data science is a bit more complex then it looks from the outside..]]></description>
+            <content:encoded><![CDATA[<p>In 2017 I started a MSc program in applied data science. Since then many people have asked me for my thoughts on how to pivot into a career in this area. I decide to condense my thoughts and advice into this article.</p>
+<ol>
+<li>
+<p>Data science is a relevantly new profession, there has been an exponential explosion in the hype surrounding it. I enjoy my work and I&#x27;m glad I discovered it as a career. However, I wouldn’t nominate it as “the sexiest job of the 21st century”. I’d rather suggest that data science does not exist as a career <a href="https://engineering.indeedblog.com/blog/2018/12/theres-no-such-thing-as-a-data-scientist/">article</a></p>
+</li>
+<li>
+<p>“Data is the new oil”. I’ve seen many companies hire data positions because they want to ‘unlock the potential’ for their data. However, without correctly supporting the individuals this can lead to frustration on both sides. Working with data in a company requires many levels like a cake. You need to start with a correctly designed data warehouse, basic KPIs, and dashboards, then you can move to more advanced prediction analysis. Data career can become very frustrating as a result.</p>
+</li>
+<li>
+<p>Companies often incorrectly advertise data science positions. Many other career routes are ‘rebranded’ as data science.</p>
+</li>
+</ol>
+<ul>
+<li>Data engineers: Are developers who design and manage data warehousing and pipeline solutions. Data engineers are concerned with the production readiness of that data and all that comes with it: formats, scaling, resilience, security, and more <a href="https://www.springboard.com/blog/data-analyst-vs-data-scientist/">see article here</a></li>
+<li>Data analyst: Are concerned with working with various teams in a company to utilize data to derive answers. Do they ask questions such as what stories do the numbers tell? What business decisions can be made based on these insights? They may also create visual representations, such as charts and graphs to better showcase what the data reveals. There are several subdiscipline and specializations such as product analyst, market analyst, business intelligence analyst. They probably don’t write production-level code, and have a good statistical background.</li>
+<li>Machine learning engineers: In cases where companies design and deploy machine learning models, people develop the code and deploy them to production. They are specialist engineers who are trained in machine learning theory. Specialists include NLP, computer vision.</li>
+<li>Research scientist: A generic term that is often a variation of machine learning engineer with a focus on research and not implemention.</li>
+<li>Data scientist: Could cover any of these roles. In some cases would sit between data analyst and machine learning engineer.</li>
+</ul>
+<ol start="4">
+<li>
+<p>If you are considering a switch into a data career, you may not know yet which of the above job titles you’ll one day hold. As time goes on, I expect companies to become more data literate and better able to hire the correct people with the correct job tiles.</p>
+</li>
+<li>
+<p>There are other career routes out there. Many professions work with data.</p>
+</li>
+<li>
+<p>It often feels like there is a constant waterfall of new technologies, software, models etc. In my experience, academia is light years ahead of industry. LSTM, reinforcement learning, Q-learning are still very limited in production use. Aside from the giant of the industry (Google, facebook). Most mid-level companies still struggle to just generate KPIs.</p>
+</li>
+<li>
+<p>Things change fast, and there is a lot of noise in this profession. Data scientists seem to have a love of writing blogs and publishing their achievements. Which can quickly generate a fear that you are falling behind and missing out. I don’t have much advice on how to prevent this feeling.</p>
+</li>
+<li>
+<p>You should enjoy working with data. If you want a career in this field, you should enjoy the process of understanding and gaining insights from numerical and quantitative data. Before you commit to a degree program, there are many online courses you can take to explore the field and see what you enjoy.</p>
+</li>
+</ol>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+    </channel>
+</rss>
