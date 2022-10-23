@@ -259,9 +259,7 @@ export default function Home({ articles }) {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Hey, I'm Fionn, a Psychologist, Product Manager and Entrepreneur currently based between Berlin and Galway.
-             Im the co-founder of XYZ, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+             I'm the co-founder of Passive Prediction, a digital mental health startup focused on improving mental health through better corporate wellbeing.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
