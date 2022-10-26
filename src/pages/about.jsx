@@ -67,15 +67,15 @@ export default function About() {
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
-                I'm a versatile person, I have a varied background from Psychology through to Computer Science, and as far as Economics. Which I believe gives me a unique perspective on things.                I believe human behaviour is the most fundamental unit of most things in life, and understanding it can give the best insight into higher-level concepts.              </p>
+                I have degrees in both Psychology and Machine Learning. I've worked as a technical product manager for several years at both early and late-stage startups. I've worked in Moodpath (acquired by MindDoc), the largest mental health app in the world at the time with three million users, and in Jina.ai. Leading the launch of the first and second version of their core developer product.
+                </p>
+
+              <p> I'm currently co-foundering  Passive Prediction, a digital mental health startup focused on improving mental health through better corporate wellbeing.</p>
               <p>
-                I am generally most happy when on a mountain or in the water.
-                Regardless of the activity (Sailing, Mountaineering, Swimming, Rock Climbing), if there is friends and nature, life is good.
+                I am generally most happy when on a mountain or in the water. I love sailing, mountaineering, swimming, and rock climbing. If I have friends and nature, life is good.
+
               </p>
-              <p>
-                I hold an MSc in Applied Data Science from the University of Gothenburg, in Sweden and a first-class honours bachelors degree in
-                Psychology from the University of Galway, Ireland
-              </p>
+
             </div>
           </div>
           <div className="lg:pl-20">
