@@ -2,9 +2,15 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
+  "/about": "pages/about.html",
+  "/articles/thoughts-on-the-worlds-sexiest-job": "pages/articles/thoughts-on-the-worlds-sexiest-job.html",
+  "/projects": "pages/projects.html",
+  "/articles/we-ditched-jira-and-started-using-github-as-our-project-management-tool": "pages/articles/we-ditched-jira-and-started-using-github-as-our-project-management-tool.html",
+  "/uses": "pages/uses.html",
   "/articles": "pages/articles.js",
-  "/about": "pages/about.js",
-  "/resume": "pages/resume.js",
-  "/speaking": "pages/speaking.js"
+  "/": "pages/index.js",
+  "/thank-you": "pages/thank-you.html",
+  "/speaking": "pages/speaking.html",
+  "/resume": "pages/resume.html",
+  "/404": "pages/404.html"
 }

@@ -61,34 +61,12 @@ export default function Uses() {
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>
-                                                <Image
-                                                    src={gulogo}
-                                                    alt=""
-                                                    sizes={true ? '4rem' : '2.25rem'}
-                                                    className={clsx(
-                                                        'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-                                                        true ? 'h-16 w-16' : 'h-9 w-9'
-                                                    )}
-                                                    priority
-                                                />
 
-                                            </td>
                                             <td>2017 - 2019</td>
                                             <td>MSc Applied Data Science</td>
                                         </tr>
                                         <tr>
-                                            <td><Image
-                                                src={nuiglogo}
-                                                alt=""
-                                                sizes={true ? '4rem' : '2.25rem'}
-                                                className={clsx(
-                                                    'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-                                                    true ? 'h-16 w-16' : 'h-9 w-9'
-                                                )}
-                                                priority
-                                            />
-                                            </td>
+
                                             <td>2013-2016</td>
                                             <td>BA Psychology</td>
                                         </tr>
