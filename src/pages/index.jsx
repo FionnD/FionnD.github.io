@@ -17,7 +17,7 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpeg'
 import image4 from '@/images/photos/image-4.jpeg'
 import image5 from '@/images/photos/image-5.jpg'
-import logoUG from '@/images/logos/ug.png'
+import logoLua from '@/images/logos/lua-icon.png'
 import logoJina from '@/images/logos/jina.png'
 import logoMindDoc from '@/images/logos/minddoc.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
@@ -138,9 +138,9 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'University of Galway',
-      title: 'Commercialisation Lead',
-      logo: logoUG,
+      company: 'Lua Health',
+      title: 'Co-founder',
+      logo: logoLua,
       start: '2021',
       end: {
         label: 'Present',
@@ -256,7 +256,7 @@ export default function Home({ articles }) {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Hey, I'm Fionn, a Psychologist, Product Manager and Entrepreneur currently based between Berlin and Galway.
-             I'm the co-founder of Passive Prediction, a digital mental health startup focused on improving mental health through better corporate wellbeing.
+             I'm the co-founder of <a href="https://www.luahealthcare.com">Lua Health</a>, a digital mental health startup focused on improving mental health through better corporate wellbeing.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
