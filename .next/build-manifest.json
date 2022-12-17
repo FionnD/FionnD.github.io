@@ -1,0 +1,88 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/OCCogL7QVLT-MaVo5XYD3/_buildManifest.js",
+    "static/OCCogL7QVLT-MaVo5XYD3/_ssgManifest.js"
+  ],
+  "rootMainFiles": [],
+  "pages": {
+    "/": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/index-6935e8bf3537e922.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/css/00d7ddc9806f73bd.css",
+      "static/chunks/pages/_app-ae4a60f37f734333.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/_error-e4f561a102d9bb14.js"
+    ],
+    "/about": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/about-03f49f96d7364c78.js"
+    ],
+    "/articles": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/articles-a8c4c9a574ae3003.js"
+    ],
+    "/articles/thoughts-on-the-worlds-sexiest-job": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/articles/thoughts-on-the-worlds-sexiest-job-3865e530805da689.js"
+    ],
+    "/articles/we-ditched-jira-and-started-using-github-as-our-project-management-tool": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/articles/we-ditched-jira-and-started-using-github-as-our-project-management-tool-0742b49bb7ac61b6.js"
+    ],
+    "/projects": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/projects-5c323014f5e82382.js"
+    ],
+    "/resume": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/resume-a41a78681de824df.js"
+    ],
+    "/speaking": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/speaking-d74abf6114a9919a.js"
+    ],
+    "/thank-you": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/thank-you-4f9db9ab3c97e4ad.js"
+    ],
+    "/uses": [
+      "static/chunks/webpack-b8f8d6679aaa5f42.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-05b7b182d80246a6.js",
+      "static/chunks/pages/uses-e24d5a8c3eba87b7.js"
+    ]
+  },
+  "ampFirstPages": []
+}
