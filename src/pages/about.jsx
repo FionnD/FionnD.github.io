@@ -70,7 +70,7 @@ export default function About() {
                 I have degrees in both Psychology and Machine Learning. I've worked as a technical product manager for several years at both early and late-stage startups. I've worked in Moodpath (acquired by MindDoc), the largest mental health app in the world at the time with three million users, and in Jina.ai. Leading the launch of the first and second version of their core developer product.
                 </p>
 
-              <p> I'm currently co-foundering  Passive Prediction, a digital mental health startup focused on improving mental health through better corporate wellbeing.</p>
+              <p> I'm currently co-foundering <a href="https://www.luahealthcare.com">Lua Health</a>, a digital mental health startup focused on improving mental health through better corporate wellbeing.</p>
               <p>
                 I am generally most happy when on a mountain or in the water. I love sailing, mountaineering, swimming, and rock climbing. If I have friends and nature, life is good.
 
