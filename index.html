@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fionn Delahunty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: neue-haas-grotesk-text, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #fcfcfc;
+            color: #222;
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            letter-spacing: -0.01em;
+        }
+
+        .container {
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .intro {
+            margin-bottom: 32px;
+            color: #444;
+            font-size: 20px;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+        }
+
+        .section {
+            margin-bottom: 24px;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .section-last {
+            margin-bottom: 48px;
+            border-bottom: none;
+        }
+
+        .links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #000;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            color: #666;
+            text-decoration-thickness: 2px;
+        }
+
+        .company-link {
+            color: #000;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .company-link:hover {
+            color: #666;
+            text-decoration-thickness: 2px;
+        }
+
+        /* Subtle animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 24px;
+                font-size: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .intro, .section {
+                font-size: 15px;
+            }
+
+            .links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 32px 20px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            .intro, .section {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .section-last {
+                margin-bottom: 32px;
+            }
+        }
+
+        /* Focus states for accessibility */
+        .links a:focus,
+        .company-link:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: #e6f3ff;
+            color: #0066cc;
+        }
+
+        /* List styling */
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 8px 0 0 0;
+        }
+
+        .section li {
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section li:before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 17px;
+            letter-spacing: -0.01em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fionn Delahunty</h1>
+
+        <div class="section" style="font-size: 16px;">
+            Irish man, back living in Ireland after some years in Sweden and Berlin.
+            <br><br>
+            Currently Senior Product Manager for voice tech at <a href="https://synthflow.ai" class="company-link" target="_blank" rel="noopener">Synthflow.ai</a>. Most of my career has been spent shipping "AI" products that people actually use.
+        </div>
+
+        <div class="section">
+            <span class="section-title">Experience</span>
+            <ul>
+                <li>Senior PM @ <a href="https://synthflow.ai" class="company-link" target="_blank" rel="noopener">Synthflow.ai</a></li>
+                <li>Co-founder/CEO @ <a href="https://luahealth.io" class="company-link" target="_blank" rel="noopener">Lua Health</a></li>
+                <li>Tech PM @ <a href="https://jina.ai" class="company-link" target="_blank" rel="noopener">Jina.ai</a></li>
+                <li>PM @ <a href="https://minddoc.com/de/en/" class="company-link" target="_blank" rel="noopener">MindDoc Health</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <span class="section-title">Education</span>
+            <ul>
+                <li>MSc in Applied Data Science / University of Gothenburg, Sweden</li>
+                <li>BA in Psychology / University of Galway, Ireland (Summa cum laude)</li>
+            </ul>
+        </div>
+
+        <div class="section section-last">
+            <span class="section-title">Hobbies</span>
+            <ul>
+                <li>Coffee</li>
+                <li>Outdoors // Hiking // Sailing // Camping</li>
+                <li>Spending time with friends, often doing the two above</li>
+            </ul>
+        </div>
+
+        <div class="links">
+            <a href="https://www.linkedin.com/in/fionndelahunty/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/FionnD" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
