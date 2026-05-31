@@ -20,7 +20,7 @@
             padding: 60px 40px;
             max-width: 600px;
             margin: 0 auto;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .container {
@@ -33,7 +33,7 @@
             font-weight: 600;
             color: #111;
             margin-bottom: 16px;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
         }
 
         .intro {
@@ -41,7 +41,7 @@
             color: #444;
             font-size: 20px;
             line-height: 1.6;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .section {
@@ -187,7 +187,181 @@
             margin-bottom: 8px;
             display: block;
             font-size: 17px;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
+        }
+
+        .token-section {
+            border-bottom: none;
+            letter-spacing: 0;
+            margin-top: 42px;
+            padding-bottom: 0;
+        }
+
+        .token-source-note {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        .token-stats {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            border: 1px solid #ececec;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            background: #fff;
+        }
+
+        .token-stat {
+            min-width: 0;
+            padding: 13px 10px;
+            text-align: center;
+            border-right: 1px solid #ececec;
+        }
+
+        .token-stat:last-child {
+            border-right: 0;
+        }
+
+        .token-stat-value {
+            color: #111;
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .token-stat-label {
+            color: #777;
+            display: block;
+            font-size: 10px;
+            line-height: 1.3;
+            margin-top: 4px;
+            white-space: nowrap;
+        }
+
+        .heatmap-shell {
+            --cell: 8px;
+            --gap: 3px;
+            overflow-x: auto;
+            padding-bottom: 2px;
+            scrollbar-width: thin;
+        }
+
+        .heatmap {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(7, var(--cell));
+            grid-auto-columns: var(--cell);
+            gap: var(--gap);
+            min-width: max-content;
+        }
+
+        .token-cell {
+            width: var(--cell);
+            height: var(--cell);
+            border-radius: 2px;
+            background: #eef1ee;
+            outline: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .token-cell[data-level="1"] {
+            background: #d9ebdf;
+        }
+
+        .token-cell[data-level="2"] {
+            background: #acd6b9;
+        }
+
+        .token-cell[data-level="3"] {
+            background: #74ba8d;
+        }
+
+        .token-cell[data-level="4"] {
+            background: #37965e;
+        }
+
+        .token-cell[data-level="5"] {
+            background: #176d3d;
+        }
+
+        .month-labels {
+            display: grid;
+            gap: var(--gap);
+            min-width: max-content;
+            margin-top: 7px;
+            color: #8a8a8a;
+            font-size: 10px;
+            line-height: 1;
+        }
+
+        .month-label {
+            white-space: nowrap;
+        }
+
+        .token-legend {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
+            color: #888;
+            font-size: 10px;
+            margin-top: 11px;
+        }
+
+        .legend-cell {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: #eef1ee;
+            outline: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .legend-cell[data-level="1"] {
+            background: #d9ebdf;
+        }
+
+        .legend-cell[data-level="2"] {
+            background: #acd6b9;
+        }
+
+        .legend-cell[data-level="3"] {
+            background: #74ba8d;
+        }
+
+        .legend-cell[data-level="4"] {
+            background: #37965e;
+        }
+
+        .legend-cell[data-level="5"] {
+            background: #176d3d;
+        }
+
+        @media (max-width: 560px) {
+            .token-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .token-stat {
+                border-bottom: 1px solid #ececec;
+            }
+
+            .token-stat:nth-child(2n) {
+                border-right: 0;
+            }
+
+            .token-stat:nth-last-child(-n + 1) {
+                grid-column: 1 / -1;
+                border-bottom: 0;
+            }
+
+            .token-stat-value,
+            .token-stat-label {
+                white-space: normal;
+            }
         }
     </style>
 </head>
@@ -198,7 +372,7 @@
         <div class="section" style="font-size: 16px;">
             Irish man, back living in Ireland after some years in Sweden and Berlin.
             <br><br>
-            Currently head of product at <a href="https://synthflow.ai" class="company-link" target="_blank" rel="noopener">Synthflow.ai</a>. Most of my career has been spent shipping "AI" products that people actually use.
+            Currently Senior Product Manager for voice tech at <a href="https://synthflow.ai" class="company-link" target="_blank" rel="noopener">Synthflow.ai</a>. Most of my career has been spent shipping "AI" products that people actually use.
         </div>
 
         <div class="section">
@@ -232,6 +406,278 @@
             <a href="https://www.linkedin.com/in/fionndelahunty/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/FionnD" target="_blank" rel="noopener">GitHub</a>
         </div>
+
+        <div class="section token-section" aria-labelledby="token-activity-title">
+            <span class="section-title" id="token-activity-title">Token activity</span>
+            <div class="token-source-note" id="token-source-note"></div>
+            <div class="token-stats" id="token-stats" aria-live="polite"></div>
+            <div class="heatmap-shell">
+                <div class="heatmap" id="token-heatmap" role="img" aria-label="Daily token activity heatmap"></div>
+                <div class="month-labels" id="token-months" aria-hidden="true"></div>
+            </div>
+            <div class="token-legend" aria-hidden="true">
+                <span>Less</span>
+                <span class="legend-cell" data-level="0"></span>
+                <span class="legend-cell" data-level="1"></span>
+                <span class="legend-cell" data-level="2"></span>
+                <span class="legend-cell" data-level="3"></span>
+                <span class="legend-cell" data-level="4"></span>
+                <span class="legend-cell" data-level="5"></span>
+                <span>More</span>
+            </div>
+        </div>
     </div>
+    <script>
+        const tokenUsage = {
+            "periodStart": "2026-03-01",
+            "through": "2026-05-31",
+            "stats": {
+                "all": {
+                    "total": 566672220,
+                    "peak": 122502719,
+                    "peakDate": "2026-05-29",
+                    "current": 7,
+                    "longest": 7,
+                    "longestMs": 569814886,
+                    "calls": 7184,
+                    "files": 562
+                },
+                "codex": {
+                    "total": 323934726,
+                    "peak": 122502719,
+                    "peakDate": "2026-05-29",
+                    "current": 6,
+                    "longest": 6,
+                    "longestMs": 569814886,
+                    "calls": 3220,
+                    "files": 92
+                },
+                "claude": {
+                    "total": 242737494,
+                    "peak": 42351378,
+                    "peakDate": "2026-05-21",
+                    "current": 0,
+                    "longest": 6,
+                    "longestMs": 316232297,
+                    "calls": 3964,
+                    "files": 470
+                }
+            },
+            "daily": {
+                "codex": {
+                    "2026-04-14": 1862554,
+                    "2026-04-15": 3074731,
+                    "2026-04-20": 3540928,
+                    "2026-04-23": 5203314,
+                    "2026-04-30": 1858581,
+                    "2026-05-04": 9513817,
+                    "2026-05-05": 17426775,
+                    "2026-05-06": 10287468,
+                    "2026-05-07": 15391548,
+                    "2026-05-08": 22815090,
+                    "2026-05-09": 1653895,
+                    "2026-05-12": 35948015,
+                    "2026-05-13": 2339233,
+                    "2026-05-14": 9449191,
+                    "2026-05-18": 1770548,
+                    "2026-05-20": 24863723,
+                    "2026-05-21": 1005947,
+                    "2026-05-22": 817240,
+                    "2026-05-23": 10212034,
+                    "2026-05-26": 1281618,
+                    "2026-05-27": 989942,
+                    "2026-05-28": 13433740,
+                    "2026-05-29": 122502719,
+                    "2026-05-30": 2314984,
+                    "2026-05-31": 4377091
+                },
+                "claude": {
+                    "2026-03-02": 43920,
+                    "2026-03-03": 2965566,
+                    "2026-03-06": 1513000,
+                    "2026-03-09": 1640763,
+                    "2026-03-10": 1319823,
+                    "2026-03-11": 1430172,
+                    "2026-03-12": 4857342,
+                    "2026-03-13": 331333,
+                    "2026-03-16": 11657178,
+                    "2026-03-23": 1889764,
+                    "2026-03-24": 2963943,
+                    "2026-04-01": 538327,
+                    "2026-04-03": 369967,
+                    "2026-04-07": 6062003,
+                    "2026-04-08": 2788021,
+                    "2026-04-10": 3966793,
+                    "2026-04-11": 574971,
+                    "2026-04-23": 772191,
+                    "2026-04-28": 169108,
+                    "2026-04-29": 32679640,
+                    "2026-04-30": 6100657,
+                    "2026-05-07": 1098774,
+                    "2026-05-08": 1364345,
+                    "2026-05-12": 723693,
+                    "2026-05-13": 6890178,
+                    "2026-05-18": 18886149,
+                    "2026-05-19": 3530421,
+                    "2026-05-20": 4762575,
+                    "2026-05-21": 42351378,
+                    "2026-05-22": 22041856,
+                    "2026-05-23": 1230099,
+                    "2026-05-25": 4614327,
+                    "2026-05-26": 11756925,
+                    "2026-05-27": 3705334,
+                    "2026-05-28": 34920215,
+                    "2026-05-30": 226743
+                }
+            }
+        }
+
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+        function parseDate(dateKey) {
+            const [year, month, day] = dateKey.split('-').map(Number)
+            return new Date(Date.UTC(year, month - 1, day))
+        }
+
+        function dateKey(date) {
+            return date.toISOString().slice(0, 10)
+        }
+
+        function addDays(date, days) {
+            const next = new Date(date)
+            next.setUTCDate(next.getUTCDate() + days)
+            return next
+        }
+
+        function mergedDaily() {
+            const merged = {}
+            for (const source of ['codex', 'claude']) {
+                for (const [day, value] of Object.entries(tokenUsage.daily[source])) {
+                    merged[day] = (merged[day] || 0) + value
+                }
+            }
+            return merged
+        }
+
+        function formatTokens(value) {
+            if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`
+            if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`
+            if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`
+            return String(value)
+        }
+
+        function formatDate(date) {
+            return date.toLocaleDateString('en-IE', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
+        }
+
+        function formatDuration(ms) {
+            const minutes = Math.round(ms / 60000)
+            const hours = Math.floor(minutes / 60)
+            const rest = minutes % 60
+            return `${hours}h ${rest}m`
+        }
+
+        function levelFor(value, max) {
+            if (!value) return 0
+            const ratio = Math.log10(value + 1) / Math.log10(max + 1)
+            if (ratio > 0.86) return 5
+            if (ratio > 0.68) return 4
+            if (ratio > 0.5) return 3
+            if (ratio > 0.32) return 2
+            return 1
+        }
+
+        function statItems(stats) {
+            return [
+                ['3-month tokens', formatTokens(stats.total)],
+                ['Peak day', formatTokens(stats.peak)],
+                ['Longest task', formatDuration(stats.longestMs)],
+                ['Current streak', `${stats.current} days`],
+                ['Longest streak', `${stats.longest} days`],
+            ]
+        }
+
+        function sourceNote() {
+            return `${formatDate(parseDate(tokenUsage.periodStart))} to ${formatDate(parseDate(tokenUsage.through))} · Codex ${formatTokens(tokenUsage.stats.codex.total)} · Claude Code ${formatTokens(tokenUsage.stats.claude.total)}.`
+        }
+
+        function renderStats() {
+            const stats = tokenUsage.stats.all
+            const statsEl = document.getElementById('token-stats')
+            statsEl.innerHTML = ''
+
+            for (const [label, value] of statItems(stats)) {
+                const stat = document.createElement('div')
+                stat.className = 'token-stat'
+
+                const valueEl = document.createElement('span')
+                valueEl.className = 'token-stat-value'
+                valueEl.textContent = value
+
+                const labelEl = document.createElement('span')
+                labelEl.className = 'token-stat-label'
+                labelEl.textContent = label
+
+                stat.append(valueEl, labelEl)
+                statsEl.append(stat)
+            }
+
+            document.getElementById('token-source-note').textContent = sourceNote()
+        }
+
+        function renderHeatmap() {
+            const daily = mergedDaily()
+            const heatmap = document.getElementById('token-heatmap')
+            const months = document.getElementById('token-months')
+            const periodStart = parseDate(tokenUsage.periodStart)
+            const through = parseDate(tokenUsage.through)
+            const start = addDays(periodStart, -periodStart.getUTCDay())
+            const dayCount = Math.floor((through - start) / 86400000) + 1
+            const weeks = Math.ceil(dayCount / 7)
+            const values = Object.entries(daily)
+                .filter(([day]) => day >= tokenUsage.periodStart && day <= tokenUsage.through)
+                .map(([, value]) => value)
+            const max = Math.max(...values, 1)
+
+            heatmap.innerHTML = ''
+            months.innerHTML = ''
+            months.style.gridTemplateColumns = `repeat(${weeks}, var(--cell))`
+            heatmap.setAttribute('aria-label', `Daily token activity from ${formatDate(periodStart)} to ${formatDate(through)}`)
+
+            for (let offset = 0; offset < dayCount; offset += 1) {
+                const day = addDays(start, offset)
+                const key = dateKey(day)
+                const total = daily[key] || 0
+                const cell = document.createElement('span')
+                const codex = tokenUsage.daily.codex[key] || 0
+                const claude = tokenUsage.daily.claude[key] || 0
+
+                cell.className = 'token-cell'
+                cell.dataset.level = String(levelFor(total, max))
+                cell.title = `${formatDate(day)}: ${formatTokens(total)} tokens (Codex ${formatTokens(codex)}, Claude Code ${formatTokens(claude)})`
+
+                heatmap.append(cell)
+            }
+
+            const seenMonths = new Set()
+            for (let offset = 0; offset < dayCount; offset += 1) {
+                const day = addDays(start, offset)
+                if (day.getUTCDate() !== 1) continue
+
+                const key = `${day.getUTCFullYear()}-${day.getUTCMonth()}`
+                if (seenMonths.has(key)) continue
+                seenMonths.add(key)
+
+                const label = document.createElement('span')
+                label.className = 'month-label'
+                label.textContent = monthNames[day.getUTCMonth()]
+                label.style.gridColumn = `${Math.floor(offset / 7) + 1} / span 4`
+                months.append(label)
+            }
+        }
+
+        renderStats()
+        renderHeatmap()
+    </script>
 </body>
 </html>
