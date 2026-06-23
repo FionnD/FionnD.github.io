@@ -162,6 +162,83 @@ figcaption {
     margin-top: 8px;
 }
 
+.review-comic {
+    margin: 34px 0 36px;
+}
+
+.review-window {
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.08);
+    overflow: hidden;
+}
+
+.review-window-bar {
+    align-items: center;
+    background: #f3f3f3;
+    border-bottom: 1px solid #e3e3e3;
+    display: flex;
+    gap: 7px;
+    height: 34px;
+    padding: 0 12px;
+}
+
+.review-window-bar span {
+    background: #c9c9c9;
+    border-radius: 50%;
+    display: block;
+    height: 9px;
+    width: 9px;
+}
+
+.review-thread {
+    display: grid;
+    gap: 16px;
+    padding: 22px;
+}
+
+.review-comment {
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    max-width: 88%;
+    padding: 14px 15px 13px;
+}
+
+.engineer-comment {
+    background: #fbfbfb;
+}
+
+.pm-comment {
+    background: #eff8f1;
+    border-color: #cfe7d4;
+    justify-self: end;
+}
+
+.review-role {
+    color: #666;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.review-comment p {
+    color: #1f1f1f;
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.review-status {
+    color: #777;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+}
+
 article strong {
     color: #111;
 }
@@ -212,5 +289,13 @@ article strong {
     article p,
     article li {
         font-size: 16px;
+    }
+
+    .review-thread {
+        padding: 16px;
+    }
+
+    .review-comment {
+        max-width: 100%;
     }
 }

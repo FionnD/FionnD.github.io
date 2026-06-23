@@ -60,7 +60,7 @@
                 <figcaption>The tools make the activity graph look impressive. The graph does not tell you whether the work was the right work.</figcaption>
             </figure>
 
-            <p>In my experience, PM coding is useful for exactly two things.</p>
+            <p>In my experience, PM coding has two good uses and one very common failure mode.</p>
 
             <h2>First: updating frontend copy.</h2>
 
@@ -97,6 +97,40 @@
             </ul>
 
             <p>This is good PM work. Code is just the medium.</p>
+
+            <h2>Third: pissing off your engineering team.</h2>
+
+            <p>This is not a recommended use case. It is just a common one.</p>
+
+            <p>The fastest way to annoy your engineering team is to submit a big PR with code you cannot explain. Not code that is imperfect. Not code that needs review. Code where the answer to "why did you do this?" is basically "because Codex told me."</p>
+
+            <figure class="review-comic" aria-label="A code review panel where an engineer asks why the code bypasses validation and the PM says because Codex told me.">
+                <div class="review-window">
+                    <div class="review-window-bar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="review-thread">
+                        <div class="review-comment engineer-comment">
+                            <span class="review-role">Engineer</span>
+                            <p>Why does this bypass the normal validation path?</p>
+                        </div>
+                        <div class="review-comment pm-comment">
+                            <span class="review-role">PM</span>
+                            <p>Because Codex told me.</p>
+                        </div>
+                        <div class="review-status">Review requested: emotional damage</div>
+                    </div>
+                </div>
+                <figcaption>The new genre of code review: everyone is looking at the diff, nobody is looking at a decision.</figcaption>
+            </figure>
+
+            <p>When an engineer reviews another engineer's PR, there is usually a shared contract. The reviewer can ask why something was done and expect an answer: a constraint, a tradeoff, a previous incident, a performance concern, or just "good catch, I will change it."</p>
+
+            <p>When a PM submits a feature-sized AI-generated PR, that contract can collapse. The reviewer asks a normal engineering question and gets an answer from a seance. The PM feels interrogated. The engineer feels like they are reverse-engineering intent from autocomplete. The team is now negotiating with code that nobody quite owns.</p>
+
+            <p>This is shit for everyone involved.</p>
 
             <p>Where PMs get into trouble is when the prototype starts dressing up as production software.</p>
 
