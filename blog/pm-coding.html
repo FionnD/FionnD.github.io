@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <title>PMs Should Code, But Not Like That - Fionn Delahunty</title>
+    <meta name="description" content="PMs should code for copy, prototypes, demos, and learning. They should not quietly build production features that engineering has to rescue.">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="../">Fionn Delahunty</a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="./">Blog</a>
+            </div>
+        </nav>
+
+        <article>
+            <header>
+                <span class="eyebrow">23 Jun 2026</span>
+                <h1>PMs Should Code, But Not Like That</h1>
+                <p class="lede">Product managers should code. They should also be very clear about what their code is for.</p>
+            </header>
+
+            <p>There is a certain kind of product manager who learns just enough code to become dangerous.</p>
+
+            <p>I know this because, occasionally, I am that product manager.</p>
+
+            <p>The fantasy is obvious. You see a small product gap. You understand the customer problem. You know what the button should say, where it should go, and what should happen when someone clicks it. Engineering is busy, as engineering always is, because software has an infinite appetite for time. So you think: how hard can this be?</p>
+
+            <p>Several hours later you have created a "working" feature in the same sense that a chair balanced on two legs is working. It exists. It can be photographed. It might even survive a demo. But the developer who eventually opens the pull request will quietly age five years.</p>
+
+            <p>This is not a post about why PMs should not code. I think PMs should code.</p>
+
+            <p>But PMs should be very clear about what their code is for.</p>
+
+            <p>This has become more confusing because Codex, Claude Code, and the rest of the AI coding tools are now actually good enough to make a PM feel powerful.</p>
+
+            <p>Not theoretically powerful. Actually powerful.</p>
+
+            <p>You can open a repo, describe a change in normal human language, and a few minutes later there is a branch with working code. Sometimes it even passes tests, which is rude, because now your bad idea has gained credibility.</p>
+
+            <p>This is why LinkedIn is currently full of people declaring that PMs are all going to code now. PMs will build the feature. PMs will ship the product. PMs will replace the engineering backlog with vibes and a sufficiently confident prompt.</p>
+
+            <p>I think this is exactly the wrong lesson.</p>
+
+            <p>AI coding tools make PM coding easier. They do not make product code less real.</p>
+
+            <p>Codex can help you move faster, but it does not magically give you ownership of the system. Claude can generate a clean-looking implementation, but it does not know the five years of weird customer promises hiding behind your billing logic. The code may be syntactically fine and still be organizationally stupid.</p>
+
+            <p>That is the new trap.</p>
+
+            <p>Before, most PMs were limited by the fact that they could not build very much. This was annoying, but also protective. Now the tools remove that friction. A PM can build something much bigger than they personally understand. That feels like leverage. Sometimes it is. Sometimes it is just a faster way to create work for someone else.</p>
+
+            <figure>
+                <img src="images/github-contributions.png" alt="A GitHub contributions graph showing 906 contributions in the last year.">
+                <figcaption>The tools make the activity graph look impressive. The graph does not tell you whether the work was the right work.</figcaption>
+            </figure>
+
+            <p>In my experience, PM coding is useful for exactly two things.</p>
+
+            <p>First: updating frontend copy.</p>
+
+            <p>Second: building disposable internal tools or prototypes that help you learn something from customers before engineering commits real product time.</p>
+
+            <p>That is basically it.</p>
+
+            <p>Copy is the perfect PM coding task. The risk is low, the blast radius is small, and the PM is often the person closest to the actual words. If the empty state says something confusing, if the onboarding step has the wrong verb, if the tooltip is technically accurate but emotionally dead, just fix it. This is one of those rare situations where the person with the opinion can also safely be the person with the keyboard.</p>
+
+            <figure>
+                <img src="images/pm-copy-diff.png" alt="A small code diff changing Twilio integration labels to platform and custom purchased labels.">
+                <figcaption>This is the kind of PM code I trust: a tiny frontend copy change with a small blast radius and an obvious product reason.</figcaption>
+            </figure>
+
+            <p>The second category is more interesting: prototypes.</p>
+
+            <p>A PM prototype is not a feature. This distinction matters.</p>
+
+            <p>A feature has to live in the product. It has to survive users, edge cases, permissions, analytics, billing states, localization, migrations, QA, future refactors, and whatever weird thing your biggest customer does every Friday at 4:58pm.</p>
+
+            <p>A prototype has one job: help you learn.</p>
+
+            <p>That is a much smaller job. Smaller jobs are beautiful. A prototype can be ugly. It can be hardcoded. It can have one happy path. It can require you to manually paste in a customer ID while apologizing on the call. It can run from an internal page called <strong>/please-do-not-judge-me</strong>.</p>
+
+            <p>The point is not to sneak a feature into production through the side door. The point is to make the eventual engineering work sharper.</p>
+
+            <p>Before engineering builds the thing, you can use a prototype to answer questions like:</p>
+
+            <ul>
+                <li>Does the customer understand the workflow?</li>
+                <li>Is this even solving the right problem?</li>
+                <li>What copy do people naturally use when they describe it?</li>
+                <li>Which parts do they ignore?</li>
+                <li>What is missing that we thought was obvious?</li>
+                <li>What did we overcomplicate because we enjoy suffering?</li>
+            </ul>
+
+            <p>This is good PM work. Code is just the medium.</p>
+
+            <p>Where PMs get into trouble is when the prototype starts dressing up as production software.</p>
+
+            <p>You add a real API call. Then a settings page. Then some state management. Then a permissions check, but only sort of. Then someone asks whether we can "just ship this version" because the customer liked it. At this point the developer assigned to make it real has inherited a haunted house with nice wallpaper.</p>
+
+            <p>If you try to build whole features this way, your developers will be pissed at you. They will also be right.</p>
+
+            <p>Developers are not annoyed because PMs wrote code. Most good developers like working with PMs who understand the material. They are annoyed because half-built product code creates ambiguity. Is this throwaway or real? Do we preserve the behavior? Is the weird data model intentional? Did anyone think about failure states? Why is there business logic in the React component? Why does this function have the emotional tone of a ransom note?</p>
+
+            <p>The more real your PM-coded feature becomes, the more expensive it is for engineering to unwind.</p>
+
+            <p>And yes, sometimes I still try something too big.</p>
+
+            <p>Sometimes the prototype starts small and then the customer feedback is good, and then the next obvious step is also small, and then suddenly I have built 40% of a feature that absolutely should have had an engineer involved from the beginning. At that point the right move is not to defend it. The right move is to hand it over, explain what you learned, and accept that much of the code may be deleted.</p>
+
+            <p>That is fine.</p>
+
+            <p>The learning is the asset. The code is scaffolding.</p>
+
+            <p>A useful rule: if your PM code helps engineering make a better decision, it was probably worth it. If your PM code forces engineering to clean up your decisions, you probably overreached.</p>
+
+            <p>AI does not change that rule. It just makes it easier to overreach at enterprise scale.</p>
+
+            <p>So yes, PMs should code. Especially now. They should use Codex and Claude Code and whatever comes next. They should fix copy. They should build weird little demos. They should make internal tools that compress a week of speculation into a 30-minute customer call.</p>
+
+            <p>But they should not confuse "I prompted this into existence" with "this is how we should build it."</p>
+
+            <p>Those are very different skills.</p>
+
+            <p>And one of them is why we have engineers.</p>
+        </article>
+
+        <a class="back-link" href="./">Back to blog</a>
+    </main>
+</body>
+</html>

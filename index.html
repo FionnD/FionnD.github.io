@@ -99,6 +99,49 @@
             text-decoration-thickness: 2px;
         }
 
+        .writing-list {
+            list-style: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+        }
+
+        .section .writing-list li {
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+
+        .section .writing-list li:before {
+            content: none;
+        }
+
+        .writing-link {
+            color: #222;
+            display: block;
+            text-decoration: none;
+        }
+
+        .writing-link strong {
+            color: #111;
+            display: block;
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .writing-link span {
+            color: #666;
+            display: block;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 4px;
+        }
+
+        .writing-link:hover strong {
+            color: #666;
+            text-decoration-thickness: 2px;
+        }
+
         /* Subtle animations */
         @keyframes fadeIn {
             from {
@@ -155,7 +198,8 @@
 
         /* Focus states for accessibility */
         .links a:focus,
-        .company-link:focus {
+        .company-link:focus,
+        .writing-link:focus {
             outline: 2px solid #0066cc;
             outline-offset: 2px;
             border-radius: 2px;
@@ -409,7 +453,20 @@
             </ul>
         </div>
 
+        <div class="section">
+            <span class="section-title">Writing</span>
+            <ul class="writing-list">
+                <li>
+                    <a class="writing-link" href="blog/pm-coding.html">
+                        <strong>PMs Should Code, But Not Like That</strong>
+                        <span>On using Codex, Claude Code, and PM prototypes to learn faster without quietly handing engineering a mess.</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
         <div class="links links-section">
+            <a href="blog/">Blog</a>
             <a href="https://www.linkedin.com/in/fionndelahunty/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/FionnD" target="_blank" rel="noopener">GitHub</a>
         </div>
