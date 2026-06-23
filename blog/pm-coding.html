@@ -104,10 +104,18 @@
 
             <p>The fastest way to annoy your engineering team is to submit a big PR with code you cannot explain. Not code that is imperfect. Not code that needs review. Code where the answer to "why did you do this?" is basically "because Codex told me."</p>
 
-            <figure class="review-comic">
-                <img src="images/codex-review.svg" alt="A code review exchange. Engineer: Why does this bypass the normal validation path? PM: Because Codex told me.">
-                <figcaption>The new genre of code review: everyone is looking at the diff, nobody is looking at a decision.</figcaption>
-            </figure>
+            <aside class="review-card" aria-label="Example code review exchange">
+                <div class="review-card-header">Pull request review</div>
+                <div class="review-line">
+                    <span class="review-speaker">Engineer</span>
+                    <p>Why does this bypass the normal validation path?</p>
+                </div>
+                <div class="review-line pm-line">
+                    <span class="review-speaker">PM</span>
+                    <p>Because Codex told me.</p>
+                </div>
+                <div class="review-card-note">Everyone is looking at the diff. Nobody is looking at a decision.</div>
+            </aside>
 
             <p>When an engineer reviews another engineer's PR, there is usually a shared contract. The reviewer can ask why something was done and expect an answer: a constraint, a tradeoff, a previous incident, a performance concern, or just "good catch, I will change it."</p>
 
