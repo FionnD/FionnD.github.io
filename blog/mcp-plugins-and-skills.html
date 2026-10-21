@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://fionn.xyz/blog/mcp-plugins-and-skills.html">
     <title>Your MCP Needs Instructions and a Front Door - Fionn Delahunty</title>
-    <meta name="description" content="Make your integration easy to discover, then give the assistant a useful method for doing the work.">
+    <meta name="description" content="A working endpoint is a start. Customers still need to find it, connect it, and get useful work out of it.">
 </head>
 <body>
     <main class="page">
@@ -23,28 +23,36 @@
             <header>
                 <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 3 of 4</span>
                 <h1>Your MCP Needs Instructions and a Front Door</h1>
-                <p class="lede">Make your integration easy to discover, then give the assistant a useful method for doing the work.</p>
+                <p class="lede">A working endpoint is a start. Customers still need to find it, connect it, and get useful work out of it.</p>
             </header>
 
-            <p>An MCP endpoint is a satisfying thing to ship. It exists. It works. There is a URL.</p>
+            <p>You have an MCP server. The tools work, authentication works, and someone has successfully used it from their assistant. There is a URL in the documentation. From an engineering perspective, a reasonable amount of the job is done.</p>
 
-            <p>Unfortunately, your customer has other interests.</p>
+            <p>From a customer&#x27;s perspective, there may be no visible difference between your product having an MCP server and not having one.</p>
 
-            <p>Before building your own copilot, make the integration easier to discover and use in the assistants customers already have. Plugins in <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-claude">Claude</a> and <a href="https://developers.openai.com/plugins/build/plugins">ChatGPT and Codex</a> can package connections alongside skills.</p>
+            <p>This is an awkward gap to discover after a launch. We tend to count the people who found the instructions, understood them, connected everything, and persisted until it worked. They&#x27;re useful customers to learn from. They&#x27;re also the survivors of a small installation obstacle course.</p>
 
-            <p>The distribution matters. So do the instructions.</p>
+            <p>At Synthflow, our early MCP users were people technical enough to use Claude Code. Adding a Claude connector provided another route in. That matters when interpreting usage: the people willing to configure the first version aren&#x27;t necessarily everyone who would benefit from it.</p>
 
-            <p>Your product probably contains knowledge that is obvious to your support team and completely invisible in a list of API methods. Investigating a failed call might require checking its status, reading the transcript, and inspecting the relevant configuration. Doing those in the wrong order can produce a very confident explanation of the wrong problem.</p>
+            <p>Before building your own copilot, I&#x27;d make the useful workflows available through the assistants your customers already use. <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-claude">Claude plugins</a> and <a href="https://developers.openai.com/plugins/build/plugins">OpenAI plugins for ChatGPT and Codex</a> provide ways to package connections and skills. The installation and distribution details differ, so check the route for the product you&#x27;re targeting. The aim is straightforward: make the connection something a customer can discover and use without taking a particular interest in your infrastructure.</p>
 
-            <p>A skill can describe that workflow: start here, check this next, follow this branch if the evidence points there, and explain what remains uncertain.</p>
+            <p>Distribution gets them through the door. There&#x27;s still the question of what happens inside.</p>
 
-            <p>That gives the assistant a useful starting method. You still need to test whether it follows the method and reaches a sensible result.</p>
+            <p>Suppose a customer asks an assistant to investigate a failed call. You expose tools for fetching the call status, reading the transcript, and inspecting configuration. This sounds sufficient. All the necessary nouns are present.</p>
 
-            <p>At Synthflow, our early MCP audience was technical enough to use Claude Code. Adding a Claude connector opened another route in. The people willing to configure your first integration are not necessarily the full audience for your product.</p>
+            <p>But a tool list doesn&#x27;t necessarily explain how to investigate anything. The assistant could start with the transcript, find a plausible-looking sentence, and build a very confident explanation around it. Meanwhile, the call status might show that the failure happened before a conversation even started.</p>
 
-            <p>Package a few useful workflows around the jobs you have observed. Give customers an obvious way to install them.</p>
+            <p>Someone experienced with the product would check that first. They&#x27;d know which failures require which evidence, what to inspect next, and when there isn&#x27;t enough information to make a claim. That knowledge often lives with support and engineering. Publishing the API doesn&#x27;t automatically publish the method.</p>
 
-            <p>They should not need to become integration enthusiasts before getting value.</p>
+            <p>A skill gives you somewhere to describe it. For this illustrative investigation, it could tell the assistant to check status first, inspect the relevant evidence, compare configuration where appropriate, and explain what remains uncertain. The useful part is the sequence and judgement, not another paragraph asking the model to be an exceptionally helpful expert.</p>
+
+            <p>It also needs testing. An instruction to check the status isn&#x27;t evidence that the assistant checked it. Run representative investigations, inspect the tool calls, and see whether the answer follows from what was actually retrieved. If it still leaps to a conclusion, the nicely formatted skill has not solved the problem.</p>
+
+            <p>I&#x27;d package a few workflows you&#x27;ve already seen customers attempt through MCP. Give them names people recognise, a clear route to installation, and instructions grounded in how those jobs should be done. An investigation skill is easier to evaluate when you know what a good investigation looks like.</p>
+
+            <p>Then test the whole journey with someone who wasn&#x27;t involved in building it. Ask them to connect the product and complete a task. Notice where you feel the urge to reach over and help.</p>
+
+            <p>Those are the instructions you haven&#x27;t shipped yet.</p>
         </article>
 
         <nav class="series-nav" aria-label="Building AI into your product series">

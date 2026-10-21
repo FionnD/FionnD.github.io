@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://fionn.xyz/blog/copilot-mcp-cli.html">
     <title>Your CEO Wants a Copilot. Who Is It For? - Fionn Delahunty</title>
-    <meta name="description" content="An in-app copilot, MCP, and a CLI serve different ways of working. Start with the customer.">
+    <meta name="description" content="An in-app copilot, MCP, and a CLI can all be useful. They solve different problems for people who happen to be your customers.">
 </head>
 <body>
     <main class="page">
@@ -23,35 +23,37 @@
             <header>
                 <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 1 of 4</span>
                 <h1>Your CEO Wants a Copilot. Who Is It For?</h1>
-                <p class="lede">An in-app copilot, MCP, and a CLI serve different ways of working. Start with the customer.</p>
+                <p class="lede">An in-app copilot, MCP, and a CLI can all be useful. They solve different problems for people who happen to be your customers.</p>
             </header>
 
-            <p>Your CEO has seen a competitor’s copilot. You should have one. Someone mentions MCP. Engineering suggests a CLI.</p>
+            <p>Imagine the roadmap conversation. A competitor has launched a copilot, so now you need a copilot. Someone points out that you should probably have an MCP server too. Engineering mentions a CLI. By the end of the meeting, you have three interfaces to build and a customer whose main contribution has been not being there.</p>
 
-            <p>You now have three proposed interfaces and a slightly less clear idea of who the customer is.</p>
+            <p>None of these suggestions is particularly unreasonable. A good copilot can save people time. MCP can make your product available inside the assistant they already use. A CLI can make a repetitive job scriptable. The trouble starts when we treat them as competing answers to the same question.</p>
 
-            <p>At Synthflow, one of our early questions was whether to build an in-app copilot or a public MCP server. We shipped both. It turned out we were serving largely different groups.</p>
+            <p>At Synthflow, we shipped both an in-app copilot and an MCP server. I initially had to think about whether we needed one or the other. The usage suggested we were serving two fairly different groups.</p>
 
-            <p>In one 30-day snapshot, only 6% of workspaces using either surface used both.</p>
+            <p>In one 30-day snapshot of workspaces using either surface, 71% used only the copilot, 23% used only MCP, and 6% used both. MCP users also made four times as many tool calls per workspace. That doesn&#x27;t establish four times the value. An agent can be very busy achieving surprisingly little. But it was enough to make “which interface wins?” look like the wrong question.</p>
 
-            <p>The in-app user is already looking at your product. They want help understanding something, changing a setting, or completing a task. Sending them elsewhere to configure an integration is an ambitious interpretation of “help”.</p>
+            <p>Consider someone looking at a failed call in your product. They can see the transcript, the configuration, and a status they don&#x27;t understand. They want help here, with this call. An in-app copilot can use that context and guide them through the next step. Asking them to open another application, connect your service, and explain what they were just looking at is quite an elaborate way to provide a help button.</p>
 
-            <p>The MCP user is already working with an assistant. Your product is one of the systems it needs to access. They would quite like to finish the job without visiting your carefully designed dashboard.</p>
+            <p>Now consider someone already working in an assistant. They want to analyse calls, compare what happened, and use the findings in a report. Your dashboard is an extra stop. MCP gives their assistant a way to use your product&#x27;s tools and data without requiring that detour.</p>
 
-            <p>The CLI user wants a repeatable operation. Something they can inspect, script, and run tomorrow without having another conversation about it.</p>
+            <p>Then there&#x27;s the person who wants to run the same check on Monday, Wednesday, and every morning until somebody fixes the underlying problem. A CLI gives them commands they can inspect, script, and repeat. They may enjoy talking to an assistant. They probably don&#x27;t want to renegotiate the task with it every morning.</p>
 
             <figure>
-                <a href="images/copilot-mcp-cli-venn.png" aria-label="View full-size image: Three overlapping circles for in-app copilot, MCP, and CLI users, with shared tasks at the centre.">
-                    <img src="images/copilot-mcp-cli-venn.png" alt="Three overlapping circles for in-app copilot, MCP, and CLI users, with shared tasks at the centre." width="1312" height="1199" loading="lazy" decoding="async">
+                <a href="images/copilot-mcp-cli-venn.png" aria-label="View full-size image: A conceptual Venn diagram showing overlapping users of an in-app copilot, MCP, and a CLI.">
+                    <img src="images/copilot-mcp-cli-venn.png" alt="A conceptual Venn diagram showing overlapping users of an in-app copilot, MCP, and a CLI." width="1312" height="1199" loading="lazy" decoding="async">
                 </a>
-                <figcaption>Conceptual overlap, not measured audience sizes. The same person may use all three.</figcaption>
+                <figcaption>Conceptual overlap, not measured audience sizes. One person may use all three.</figcaption>
             </figure>
 
-            <p>These are overlapping ways of working. The same person can use all three. An agent can use a CLI. A non-technical person can use MCP through an assistant without knowing what those letters mean.</p>
+            <p>These aren&#x27;t permanent personality types. A developer can use the copilot. A non-technical customer can use an MCP-backed connector without knowing what MCP stands for. The same person can investigate something in the app, ask their assistant to summarise it, and automate the follow-up later. The workflow is usually more useful than the job title.</p>
 
-            <p>Each has a useful job. That does not mean they all belong in the next sprint.</p>
+            <p>The implementation can overlap too. Your copilot might call the same tools you expose through MCP. Sharing the plumbing is sensible. It doesn&#x27;t mean the experience, context, or route into the product should be identical.</p>
 
-            <p>Before choosing an interface, find out where the customer is when they need your product, what they are trying to finish, and what currently gets in their way. Then bring that back to the roadmap meeting.</p>
+            <p>So before committing to all three, pick a real task. Where is the customer when it starts? What information do they already have? What would they otherwise have to copy, click, or repeat? Then choose the interface that removes that work.</p>
+
+            <p>You may eventually need all three. You still need an answer to what the first one is for.</p>
         </article>
 
         <nav class="series-nav" aria-label="Building AI into your product series">

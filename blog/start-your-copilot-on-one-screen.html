@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://fionn.xyz/blog/start-your-copilot-on-one-screen.html">
     <title>Start Your Copilot on One Screen - Fionn Delahunty</title>
-    <meta name="description" content="Define the job, read the traces, and earn the right to put the chat box everywhere.">
+    <meta name="description" content="Give it a specific job, read the traces, and use what goes wrong to decide where it goes next.">
 </head>
 <body>
     <main class="page">
@@ -23,44 +23,46 @@
             <header>
                 <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 4 of 4</span>
                 <h1>Start Your Copilot on One Screen</h1>
-                <p class="lede">Define the job, read the traces, and earn the right to put the chat box everywhere.</p>
+                <p class="lede">Give it a specific job, read the traces, and use what goes wrong to decide where it goes next.</p>
             </header>
 
-            <p>A chat box looks small. The implied scope is enormous.</p>
+            <p>A chat box is a remarkably small interface for an enormous promise. Put one in the corner of your application and customers will ask it about whatever they happen to be doing. The fact that you built it to explain reports will not prevent someone from asking it to change their billing details.</p>
 
-            <p>Put one in your product and customers will ask it everything: sensible questions, unsupported requests, and things nobody on your team has considered. A placeholder saying “Ask me anything” is certainly one way to write a roadmap.</p>
+            <p>This is understandable. You put an assistant in the product. They have questions about the product. They haven&#x27;t read the internal document describing which questions count.</p>
 
-            <p>I would start on one screen, with a few specific jobs.</p>
+            <p>For customers who work inside your application, a copilot can be much more useful than sending them to a separate assistant. It can see the relevant context and help them act on it. But I&#x27;d start on one screen, with a few jobs I could describe precisely enough to test.</p>
 
-            <p>On a call-analysis page, for example, a job might be: explain why this call failed, show the supporting evidence, and identify what needs checking next. That is specific enough to build evals and test cases around. “Help users analyse calls” leaves rather more room for everyone to declare victory.</p>
+            <p>Take a call detail page. “Help customers understand their calls” sounds reasonable until you try to decide whether an answer is good. A more useful job would be: explain why this call failed, cite the available evidence, and suggest the next check. Now you can assemble cases with known outcomes, including cases where the evidence isn&#x27;t sufficient. A fluent explanation unsupported by the transcript should fail, however reassuringly it is written.</p>
 
-            <p>Reuse your MCP capabilities where they fit. Add richer tools where the job requires them. The in-app experience also gives you context: the selected call, the current filters, the thing the customer is looking at.</p>
+            <p>You can reuse tools from your MCP server and add the capabilities this workflow needs. You also need to supply the page context. If a customer asks about “this call” while looking directly at it, the assistant should know which call they mean. Asking them to paste the ID is a surprisingly effective way to make an intelligent interface feel stupid.</p>
 
-            <p>Customers will assume you have that context. If they ask about “this call” and you ask them to paste its ID, they have just discovered that your helpful colleague cannot see the screen.</p>
+            <p>Launching that narrow version starts the next part of the work: finding out where the tidy job description meets actual customers.</p>
 
-            <p>Instrument the conversations and tool calls with <a href="https://posthog.com/docs/ai-observability">PostHog AI observability</a>. As the PM, review a sample of traces daily. Follow the conversation through corrections, repeated requests, failures, and apparent successes. Find where the customer changes direction or gives up.</p>
-
-            <figure>
-                <a href="images/posthog-trace.png" aria-label="View full-size image: A PostHog example trace showing a user request, nested operations, and errors.">
-                    <img src="images/posthog-trace.png" alt="A PostHog example trace showing a user request, nested operations, and errors." width="2436" height="1534" loading="lazy" decoding="async">
-                </a>
-                <figcaption>One request, several operations, and errors along the way. Example from <a href="https://posthog.com/docs/ai-observability/traces">PostHog’s trace documentation</a>.</figcaption>
-            </figure>
-
-            <p>Collect two kinds of feedback: whether the task was completed, and thumbs up or down on individual responses. A pleasant answer and a finished job are different things.</p>
+            <p>Instrument the conversation and tool calls so you can follow a request through the system. <a href="https://posthog.com/docs/ai-observability/traces">PostHog&#x27;s AI observability traces</a>, for example, let you inspect the operations behind a response. As a PM, I&#x27;d review a sample of traces and conversations every day. Look for customers correcting the assistant, rephrasing the same question, or giving up after an answer that appears successful in the logs.</p>
 
             <figure>
-                <a href="images/posthog-trace-feedback.png" aria-label="View full-size image: A PostHog example of thumbs-down feedback and a written explanation attached to a trace.">
-                    <img src="images/posthog-trace-feedback.png" alt="A PostHog example of thumbs-down feedback and a written explanation attached to a trace." width="2220" height="634" loading="lazy" decoding="async">
+                <a href="images/posthog-trace.png" aria-label="View full-size image: An example PostHog trace showing nested operations, model calls, and errors.">
+                    <img src="images/posthog-trace.png" alt="An example PostHog trace showing nested operations, model calls, and errors." width="2436" height="1534" loading="lazy" decoding="async">
                 </a>
-                <figcaption>A thumbs-down becomes more useful when you can read the reason and inspect the corresponding trace. Example from <a href="https://posthog.com/docs/ai-observability/collect-user-feedback">PostHog’s feedback documentation</a>.</figcaption>
+                <figcaption>An example trace from <a href="https://posthog.com/docs/ai-observability/traces">PostHog&#x27;s documentation</a>, not Synthflow customer data.</figcaption>
             </figure>
 
-            <p>Turn recurring failures into evals and test cases. Improve the tools, instructions, or context handling, then check those cases again.</p>
+            <p>Imagine someone asks why a call failed. The assistant summarises it. The customer asks again, more specifically. The assistant produces a longer summary. Every request succeeds, latency is acceptable, and you&#x27;ve now disappointed the customer twice with excellent system performance.</p>
 
-            <p>Expand across the app once the first jobs work reliably. Carry the relevant page context with you.</p>
+            <p>This is why I&#x27;d collect both response feedback and task feedback. Thumbs up or down can identify a bad answer. Asking whether the task was completed tells you something different. A customer might like the explanation and still be unable to fix the problem. They might also finish the job despite a response they found irritating.</p>
 
-            <p>The chat box can go everywhere later. First, make it useful somewhere.</p>
+            <figure>
+                <a href="images/posthog-trace-feedback.png" aria-label="View full-size image: PostHog&#x27;s trace feedback view showing negative feedback on a response.">
+                    <img src="images/posthog-trace-feedback.png" alt="PostHog&#x27;s trace feedback view showing negative feedback on a response." width="2220" height="634" loading="lazy" decoding="async">
+                </a>
+                <figcaption>An example of feedback attached to a trace in <a href="https://posthog.com/docs/ai-observability/collect-user-feedback">PostHog&#x27;s documentation</a>. This shows the observability view, not the customer-facing feedback control.</figcaption>
+            </figure>
+
+            <p>Turn recurring failures into evals. If the assistant repeatedly confuses a call summary with a diagnosis, add cases that distinguish them. If it uses the wrong call after a page change, test that transition. Improve the tools, instructions, or context, then rerun those cases before declaring the problem fixed. Otherwise, you&#x27;ll be rediscovering the same issue with different customers.</p>
+
+            <p>Once the first jobs work reliably, expand to other screens. Carry the relevant selection, filters, and page context with the customer, and add tests for the new expectations you create. Expanding the chat box is easy. Expanding what it can reliably help with takes the work.</p>
+
+            <p>Start with one screen where you can tell whether the customer got the job done. That&#x27;s a much better reason to put the copilot on the next screen than having room in the corner.</p>
         </article>
 
         <nav class="series-nav" aria-label="Building AI into your product series">
