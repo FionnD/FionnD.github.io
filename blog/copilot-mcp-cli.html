@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://fionn.xyz/blog/copilot-mcp-cli.html">
+    <title>Your CEO Wants a Copilot. Who Is It For? - Fionn Delahunty</title>
+    <meta name="description" content="An in-app copilot, MCP, and a CLI serve different ways of working. Start with the customer.">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="../">Fionn Delahunty</a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="./">Blog</a>
+            </div>
+        </nav>
+
+        <article>
+            <header>
+                <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 1 of 4</span>
+                <h1>Your CEO Wants a Copilot. Who Is It For?</h1>
+                <p class="lede">An in-app copilot, MCP, and a CLI serve different ways of working. Start with the customer.</p>
+            </header>
+
+            <p>Your CEO has seen a competitor’s copilot. You should have one. Someone mentions MCP. Engineering suggests a CLI.</p>
+
+            <p>You now have three proposed interfaces and a slightly less clear idea of who the customer is.</p>
+
+            <p>At Synthflow, one of our early questions was whether to build an in-app copilot or a public MCP server. We shipped both. It turned out we were serving largely different groups.</p>
+
+            <p>In one 30-day snapshot, only 6% of workspaces using either surface used both.</p>
+
+            <p>The in-app user is already looking at your product. They want help understanding something, changing a setting, or completing a task. Sending them elsewhere to configure an integration is an ambitious interpretation of “help”.</p>
+
+            <p>The MCP user is already working with an assistant. Your product is one of the systems it needs to access. They would quite like to finish the job without visiting your carefully designed dashboard.</p>
+
+            <p>The CLI user wants a repeatable operation. Something they can inspect, script, and run tomorrow without having another conversation about it.</p>
+
+            <figure>
+                <a href="images/copilot-mcp-cli-venn.png" aria-label="View full-size image: Three overlapping circles for in-app copilot, MCP, and CLI users, with shared tasks at the centre.">
+                    <img src="images/copilot-mcp-cli-venn.png" alt="Three overlapping circles for in-app copilot, MCP, and CLI users, with shared tasks at the centre." width="1312" height="1199" loading="lazy" decoding="async">
+                </a>
+                <figcaption>Conceptual overlap, not measured audience sizes. The same person may use all three.</figcaption>
+            </figure>
+
+            <p>These are overlapping ways of working. The same person can use all three. An agent can use a CLI. A non-technical person can use MCP through an assistant without knowing what those letters mean.</p>
+
+            <p>Each has a useful job. That does not mean they all belong in the next sprint.</p>
+
+            <p>Before choosing an interface, find out where the customer is when they need your product, what they are trying to finish, and what currently gets in their way. Then bring that back to the roadmap meeting.</p>
+        </article>
+
+        <nav class="series-nav" aria-label="Building AI into your product series">
+            <p class="series-label">Building AI into your product</p>
+            <ol>
+                <li><a href="copilot-mcp-cli.html" aria-current="page">Your CEO Wants a Copilot. Who Is It For?</a></li>
+                <li><a href="ship-the-mcp.html">Ship the MCP. Listen to What It Asks For.</a></li>
+                <li><a href="mcp-plugins-and-skills.html">Your MCP Needs Instructions and a Front Door</a></li>
+                <li><a href="start-your-copilot-on-one-screen.html">Start Your Copilot on One Screen</a></li>
+            </ol>
+        </nav>
+
+        <a class="back-link" href="./">Back to blog</a>
+    </main>
+</body>
+</html>

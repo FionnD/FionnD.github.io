@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://fionn.xyz/blog/start-your-copilot-on-one-screen.html">
+    <title>Start Your Copilot on One Screen - Fionn Delahunty</title>
+    <meta name="description" content="Define the job, read the traces, and earn the right to put the chat box everywhere.">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="../">Fionn Delahunty</a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="./">Blog</a>
+            </div>
+        </nav>
+
+        <article>
+            <header>
+                <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 4 of 4</span>
+                <h1>Start Your Copilot on One Screen</h1>
+                <p class="lede">Define the job, read the traces, and earn the right to put the chat box everywhere.</p>
+            </header>
+
+            <p>A chat box looks small. The implied scope is enormous.</p>
+
+            <p>Put one in your product and customers will ask it everything: sensible questions, unsupported requests, and things nobody on your team has considered. A placeholder saying “Ask me anything” is certainly one way to write a roadmap.</p>
+
+            <p>I would start on one screen, with a few specific jobs.</p>
+
+            <p>On a call-analysis page, for example, a job might be: explain why this call failed, show the supporting evidence, and identify what needs checking next. That is specific enough to build evals and test cases around. “Help users analyse calls” leaves rather more room for everyone to declare victory.</p>
+
+            <p>Reuse your MCP capabilities where they fit. Add richer tools where the job requires them. The in-app experience also gives you context: the selected call, the current filters, the thing the customer is looking at.</p>
+
+            <p>Customers will assume you have that context. If they ask about “this call” and you ask them to paste its ID, they have just discovered that your helpful colleague cannot see the screen.</p>
+
+            <p>Instrument the conversations and tool calls with <a href="https://posthog.com/docs/ai-observability">PostHog AI observability</a>. As the PM, review a sample of traces daily. Follow the conversation through corrections, repeated requests, failures, and apparent successes. Find where the customer changes direction or gives up.</p>
+
+            <figure>
+                <a href="images/posthog-trace.png" aria-label="View full-size image: A PostHog example trace showing a user request, nested operations, and errors.">
+                    <img src="images/posthog-trace.png" alt="A PostHog example trace showing a user request, nested operations, and errors." width="2436" height="1534" loading="lazy" decoding="async">
+                </a>
+                <figcaption>One request, several operations, and errors along the way. Example from <a href="https://posthog.com/docs/ai-observability/traces">PostHog’s trace documentation</a>.</figcaption>
+            </figure>
+
+            <p>Collect two kinds of feedback: whether the task was completed, and thumbs up or down on individual responses. A pleasant answer and a finished job are different things.</p>
+
+            <figure>
+                <a href="images/posthog-trace-feedback.png" aria-label="View full-size image: A PostHog example of thumbs-down feedback and a written explanation attached to a trace.">
+                    <img src="images/posthog-trace-feedback.png" alt="A PostHog example of thumbs-down feedback and a written explanation attached to a trace." width="2220" height="634" loading="lazy" decoding="async">
+                </a>
+                <figcaption>A thumbs-down becomes more useful when you can read the reason and inspect the corresponding trace. Example from <a href="https://posthog.com/docs/ai-observability/collect-user-feedback">PostHog’s feedback documentation</a>.</figcaption>
+            </figure>
+
+            <p>Turn recurring failures into evals and test cases. Improve the tools, instructions, or context handling, then check those cases again.</p>
+
+            <p>Expand across the app once the first jobs work reliably. Carry the relevant page context with you.</p>
+
+            <p>The chat box can go everywhere later. First, make it useful somewhere.</p>
+        </article>
+
+        <nav class="series-nav" aria-label="Building AI into your product series">
+            <p class="series-label">Building AI into your product</p>
+            <ol>
+                <li><a href="copilot-mcp-cli.html">Your CEO Wants a Copilot. Who Is It For?</a></li>
+                <li><a href="ship-the-mcp.html">Ship the MCP. Listen to What It Asks For.</a></li>
+                <li><a href="mcp-plugins-and-skills.html">Your MCP Needs Instructions and a Front Door</a></li>
+                <li><a href="start-your-copilot-on-one-screen.html" aria-current="page">Start Your Copilot on One Screen</a></li>
+            </ol>
+        </nav>
+
+        <a class="back-link" href="./">Back to blog</a>
+    </main>
+</body>
+</html>

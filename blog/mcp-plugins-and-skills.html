@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://fionn.xyz/blog/mcp-plugins-and-skills.html">
+    <title>Your MCP Needs Instructions and a Front Door - Fionn Delahunty</title>
+    <meta name="description" content="Make your integration easy to discover, then give the assistant a useful method for doing the work.">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="../">Fionn Delahunty</a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="./">Blog</a>
+            </div>
+        </nav>
+
+        <article>
+            <header>
+                <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 3 of 4</span>
+                <h1>Your MCP Needs Instructions and a Front Door</h1>
+                <p class="lede">Make your integration easy to discover, then give the assistant a useful method for doing the work.</p>
+            </header>
+
+            <p>An MCP endpoint is a satisfying thing to ship. It exists. It works. There is a URL.</p>
+
+            <p>Unfortunately, your customer has other interests.</p>
+
+            <p>Before building your own copilot, make the integration easier to discover and use in the assistants customers already have. Plugins in <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-claude">Claude</a> and <a href="https://developers.openai.com/plugins/build/plugins">ChatGPT and Codex</a> can package connections alongside skills.</p>
+
+            <p>The distribution matters. So do the instructions.</p>
+
+            <p>Your product probably contains knowledge that is obvious to your support team and completely invisible in a list of API methods. Investigating a failed call might require checking its status, reading the transcript, and inspecting the relevant configuration. Doing those in the wrong order can produce a very confident explanation of the wrong problem.</p>
+
+            <p>A skill can describe that workflow: start here, check this next, follow this branch if the evidence points there, and explain what remains uncertain.</p>
+
+            <p>That gives the assistant a useful starting method. You still need to test whether it follows the method and reaches a sensible result.</p>
+
+            <p>At Synthflow, our early MCP audience was technical enough to use Claude Code. Adding a Claude connector opened another route in. The people willing to configure your first integration are not necessarily the full audience for your product.</p>
+
+            <p>Package a few useful workflows around the jobs you have observed. Give customers an obvious way to install them.</p>
+
+            <p>They should not need to become integration enthusiasts before getting value.</p>
+        </article>
+
+        <nav class="series-nav" aria-label="Building AI into your product series">
+            <p class="series-label">Building AI into your product</p>
+            <ol>
+                <li><a href="copilot-mcp-cli.html">Your CEO Wants a Copilot. Who Is It For?</a></li>
+                <li><a href="ship-the-mcp.html">Ship the MCP. Listen to What It Asks For.</a></li>
+                <li><a href="mcp-plugins-and-skills.html" aria-current="page">Your MCP Needs Instructions and a Front Door</a></li>
+                <li><a href="start-your-copilot-on-one-screen.html">Start Your Copilot on One Screen</a></li>
+            </ol>
+        </nav>
+
+        <a class="back-link" href="./">Back to blog</a>
+    </main>
+</body>
+</html>

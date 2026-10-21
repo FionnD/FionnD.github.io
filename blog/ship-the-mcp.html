@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://fionn.xyz/blog/ship-the-mcp.html">
+    <title>Ship the MCP. Listen to What It Asks For. - Fionn Delahunty</title>
+    <meta name="description" content="Capture what the agent is trying to do, as well as which tools it calls.">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="../">Fionn Delahunty</a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="./">Blog</a>
+            </div>
+        </nav>
+
+        <article>
+            <header>
+                <span class="eyebrow"><time datetime="2026-10-21">21 Oct 2026</time> · Building AI into your product · Part 2 of 4</span>
+                <h1>Ship the MCP. Listen to What It Asks For.</h1>
+                <p class="lede">Capture what the agent is trying to do, as well as which tools it calls.</p>
+            </header>
+
+            <p>Assuming you already have a usable API, I would start with an MCP server.</p>
+
+            <p>Customers can use your product through an existing assistant. You get to learn what they actually want before spending three months building a copilot around your best guesses.</p>
+
+            <p>Instrument it with PostHog before launch. Capture tool calls, errors, and the intent behind the request. Someone investigating a failed call and someone preparing a weekly report might fetch the same transcripts. What they need next is quite different.</p>
+
+            <p>At Synthflow, we found most MCP usage was for analysing calls. That gives you something specific to build around. “Customers want AI” mostly gives you meetings.</p>
+
+            <p>On 21 October 2026, <a href="https://posthog.com/mcp/leaderboard">PostHog’s public dashboard</a> reported agents explaining why they were calling a tool 92% of the time. That gives you something much more useful than a list of method names.</p>
+
+            <figure>
+                <a href="images/posthog-mcp-intent-2026-10-21.png" aria-label="View full-size image: PostHog’s public MCP dashboard showing how agents report the intent behind a tool call.">
+                    <img src="images/posthog-mcp-intent-2026-10-21.png" alt="PostHog’s public MCP dashboard showing how agents report the intent behind a tool call." width="65536" height="4292542531" loading="lazy" decoding="async">
+                </a>
+                <figcaption>PostHog captures the agent’s explanation alongside the tool call. Public dashboard captured on 21 October 2026; this is PostHog’s data. <a href="https://posthog.com/mcp/leaderboard">Source: PostHog</a>.</figcaption>
+            </figure>
+
+            <p>The agent can explain what it is attempting while it attempts it. You can compare that explanation with the tools it chooses and where it gets stuck.</p>
+
+            <p>It is still the agent’s account of the task. Treat it as evidence to investigate, rather than a perfectly transcribed customer need.</p>
+
+            <p>Errors are part of that evidence. A failed request might expose a bug, a confusing tool description, or a perfectly reasonable task your API cannot currently support.</p>
+
+            <p>Repeated calls might mean heavy usage. They might also mean the assistant has spent five minutes walking into the same door.</p>
+
+            <p>Look at the sequence. What was it trying to achieve? What information was missing? Did the customer finish the job?</p>
+
+            <p>And remember that a tool you never built cannot appear in your successful-call dashboard. Capture unsupported requests where possible and follow up with users.</p>
+
+            <p>Your first MCP release should help you decide what to build next. Logging that someone called <code>get_calls</code> is a fairly modest start.</p>
+        </article>
+
+        <nav class="series-nav" aria-label="Building AI into your product series">
+            <p class="series-label">Building AI into your product</p>
+            <ol>
+                <li><a href="copilot-mcp-cli.html">Your CEO Wants a Copilot. Who Is It For?</a></li>
+                <li><a href="ship-the-mcp.html" aria-current="page">Ship the MCP. Listen to What It Asks For.</a></li>
+                <li><a href="mcp-plugins-and-skills.html">Your MCP Needs Instructions and a Front Door</a></li>
+                <li><a href="start-your-copilot-on-one-screen.html">Start Your Copilot on One Screen</a></li>
+            </ol>
+        </nav>
+
+        <a class="back-link" href="./">Back to blog</a>
+    </main>
+</body>
+</html>

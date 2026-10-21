@@ -275,3 +275,38 @@ article strong {
     }
 
 }
+
+/* Navigation between the short AI product essays. */
+.series-nav {
+    border-top: 1px solid #e8e8e8;
+    margin-top: 44px;
+    padding-top: 24px;
+}
+
+.series-label {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.series-nav ol {
+    margin-left: 22px;
+}
+
+.series-nav li {
+    margin-bottom: 8px;
+}
+
+.series-nav a {
+    color: #333;
+    text-underline-offset: 3px;
+}
+
+.series-nav a[aria-current="page"] {
+    font-weight: 600;
+}
+
+.series-nav a:focus-visible,
+figure a:focus-visible {
+    outline: 2px solid #0066cc;
+    outline-offset: 3px;
+}
