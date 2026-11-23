@@ -212,13 +212,11 @@
                 <p class="lede">The CV has the dates. This is the longer version.</p>
             </header>
 
-            <p>My career has mostly been AI products. For a long time that meant explaining what the product actually did before anyone would let it talk to their customers.</p>
+            <p>I have built AI products since 2020. For most of that time the job included explaining what the product actually did before anyone would let it talk to their customers.</p>
 
-            <p>I have been a product manager since 2020 and Head of Product since 2026.</p>
+            <p>Synthflow sells software that answers the phone. Our customers are companies with more calls than people. The agents book appointments, chase payments, check order statuses, and hand the call to a human when they get into trouble.</p>
 
-            <p>Synthflow sells software that answers the phone. Our customers are companies with more calls than people. The agents book appointments, chase payments, check order statuses, and pass the call to a human when they get into trouble.</p>
-
-            <p>I joined in 2025 as a senior PM and took over the product organisation in February 2026. The team is product managers, product analytics and design, and the roadmap covers the platform, voice and orchestration.</p>
+            <p>I joined in 2025 as a senior PM and have run the product organisation since February 2026: product managers, product analytics and design, across the platform, voice and orchestration.</p>
 
             <div class="stats">
                 <div class="stat"><b>3x</b><span>ARR growth</span></div>
@@ -226,7 +224,7 @@
                 <div class="stat"><b>30% &rarr; 80%</b><span>conversation CSAT</span></div>
                 <div class="stat"><b>1M+</b><span>calls a week</span></div>
             </div>
-            <p class="note">Company numbers, not solo ones. Several of us were responsible for them.</p>
+            <p class="note">These are company numbers since I joined, and a lot of people earned them. The case studies below cover the part product played.</p>
 
             <span class="section-title">Selected work</span>
 
@@ -237,29 +235,29 @@
                     <p>A million calls a week, and no reliable way to tell whether a change had made them better.</p>
                     <span class="card-result">CSAT 30% to 80%</span>
                 </a>
+                <a class="work-card" href="#flow">
+                    <span class="card-meta">Synthflow · 2025 to now</span>
+                    <h3>Making agents predictable</h3>
+                    <p>The same caller could take a different path through the same agent. Enterprise buyers noticed.</p>
+                    <span class="card-result">Flow Designer</span>
+                </a>
                 <a class="work-card" href="#enterprise">
                     <span class="card-meta">Synthflow · 2025 to now</span>
                     <h3>Selling to enterprise</h3>
                     <p>Enterprise deals were not being lost in the demo. They were dying in procurement.</p>
                     <span class="card-result">3 to 105 customers</span>
                 </a>
-                <a class="work-card" href="#lua">
-                    <span class="card-meta">Lua Health · 2021 to 2024</span>
-                    <h3>Lua Health</h3>
-                    <p>A university spinout, a million euro raised, and three years that ended in a wind-down.</p>
-                    <span class="card-result">EUR 1M raised</span>
-                </a>
             </div>
 
             <section class="case" id="quality">
-                <span class="eyebrow">Synthflow · Head of Product · 2025 to now</span>
+                <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
                 <h2>Measuring quality</h2>
 
-                <p>Voice AI is easy to demo and hard to measure. At a million calls a week any single call can sound excellent while plenty of others are going badly, and customers do not experience the average. They experience the worst call they heard that week, and then they ring you.</p>
+                <p>Voice AI is easy to demo and hard to measure. At a million calls a week, any single call can sound excellent while plenty of others go badly. Customers don&rsquo;t experience the average. They experience the worst call they heard that week, and then they ring you.</p>
 
-                <p>We did not have a reliable way to tell whether a change had made things better. A model change, a prompt change, a new voice, a new telephony route: all of it could ship without anything checking the result. Which leaves an argument about quality as an argument about the most recent complaint.</p>
+                <p>We had no reliable way to tell whether a change made things better. A new model, a new prompt, a new voice, a new telephony route: any of it could ship without anything checking the result. So every argument about quality was really an argument about the most recent complaint.</p>
 
-                <p>The first thing we built was a definition of good, written down.</p>
+                <p>The first thing we built was a written definition of a good call.</p>
 
                 <!-- Optional: name the rubric dimensions here. -->
 
@@ -267,30 +265,49 @@
 
                 <p>Then we put the whole thing in front of releases. If a change made the score worse, it did not go out.</p>
 
-                <p>Conversation CSAT went from 30% to 80%. I am careful with that number. The 30% was measured with a thinner instrument than the 80%, so some of the improvement is the product and some of it is the measurement.</p>
+                <p>Conversation CSAT went from 30% to 80%. I hold that number loosely: the 30% came from a thinner instrument than the 80%, so part of the gain is the product and part is the measurement.</p>
 
                 <!-- Optional: the score on the fixed set, if you want to show it. -->
 
-                <p>The commercial change was less visible than the dashboard. Sales could put a prospect's own call recordings through the rubric before signing anything, which is a different conversation from promising that the agent is good. Quality became something we could specify.</p>
+                <p>The bigger change was commercial. Sales could run a prospect&rsquo;s own call recordings through the rubric before anyone signed, which is a different conversation from promising the agent is good. Quality stopped being a claim and became something we could specify.</p>
+
+                <a class="case-link" href="#top">Back to selected work</a>
+            </section>
+
+            <section class="case" id="flow">
+                <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
+                <h2>Making agents predictable</h2>
+
+                <p>A language model will happily take a different route through the same conversation twice. In a demo that reads as flexibility. In a customer&rsquo;s refund process it reads as a bug, and enterprise buyers noticed before we had a good answer for them.</p>
+
+                <p>The tempting fixes both fail. Write a longer prompt and you are still hoping. Hard-code every path and you have rebuilt the phone tree the customer was trying to get away from.</p>
+
+                <p>I framed the problem for engineering as a product question rather than a model one: which parts of a call does the customer need to be identical every time, and which parts are allowed to sound human? We designed the answer together as Flow Designer. The steps that have to happen in order happen in order, and the model handles the conversation in between.</p>
+
+                <!-- Optional: what you personally made (spec, flow model, mock-ups) and what it unlocked. -->
+
+                <p>It is the measuring-quality problem from the other side: you cannot score an agent against a definition of good if it will not take the same path twice.</p>
 
                 <a class="case-link" href="#top">Back to selected work</a>
             </section>
 
             <section class="case" id="enterprise">
-                <span class="eyebrow">Synthflow · Head of Product · 2025 to now</span>
+                <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
                 <h2>Selling to enterprise</h2>
 
-                <p>The product was bought from the bottom up. A team could sign up in an afternoon and get to value before talking to anyone at the company.</p>
+                <p>The product was bought from the bottom up. A team could sign up in an afternoon and get value before talking to anyone at the company.</p>
 
-                <p>Enterprise procurement then asks for things that have nothing to do with how well the agent talks. Single sign-on, roles, audit logs, data controls, concurrency limits, and a security questionnaire somebody has to answer. None of it is the AI, and any of it can stop a deal.</p>
+                <p>Enterprise procurement asks for things that have nothing to do with how well the agent talks: single sign-on, roles, audit logs, data controls, concurrency limits, and a security questionnaire somebody has to answer. None of it is the AI, and any of it can stop a deal.</p>
 
                 <p>We had built for the first meeting and not the second. So I went through the stalled deals and ranked the blockers by the pipeline behind them rather than by how often they came up in conversation.</p>
 
-                <p>We shipped the ones that unblocked the most pipeline first, in the order the deals were dying. That was not the order that was most interesting to build.</p>
+                <p>We shipped in the order deals were dying, not the order that was most interesting to build.</p>
 
-                <!-- Optional: name the capabilities that actually shipped. -->
+                <p>Some blockers had nothing to do with procurement. They were about where the calls already lived. A flagship customer doing 100,000 minutes a week ran its phones on Zoom Phone, so we became the first vendor to integrate it with agent AI. That unblocked the account. When WhatsApp opened up phone calling, we moved early and became the first voice AI provider on it. That opened Latin America, where a lot of customer conversations already happen on WhatsApp.</p>
 
-                <p>Enterprise customers went from 3 to 105, and ARR grew 3x over the same period. Those are company numbers. Product removed the reasons deals stopped. Sales did the rest.</p>
+                <!-- Optional: the LATAM number (accounts, minutes or pipeline). -->
+
+                <p>Enterprise customers went from 3 to 105, and ARR grew 3x over the same period. Product removed the reasons deals stopped. Sales did the rest.</p>
 
                 <a class="case-link" href="#top">Back to selected work</a>
             </section>
@@ -301,19 +318,19 @@
 
                 <p>Lua Health was a university spinout. The idea was to measure how a workforce was doing without sending everybody another annual survey.</p>
 
-                <p>I was CEO. I wrote the first spec, ran discovery with the people who buy wellbeing software, shipped the first version, hired the first engineers and PMs, and raised EUR 1M.</p>
+                <p>As CEO I was also the first product manager. I wrote the first spec, ran discovery with the people who buy wellbeing software, shipped the first version, hired the first engineers and PMs, and raised EUR 1M.</p>
 
-                <p>The person holding the budget is rarely the person with the problem, and the person with the problem rarely wants to be measured. That is a difficult pair of facts to build a product on.</p>
+                <p>The person holding the budget is rarely the person with the problem, and the person with the problem rarely wants to be measured. That is a hard pair of facts to build a product on.</p>
 
-                <p>We got Business Post 30 Under 30 and Slush Top 20. Both are good for morale and do not pay salaries.</p>
+                <p>We were named in Business Post&rsquo;s 30 Under 30 and the Slush Top 20. Good for morale; neither pays salaries.</p>
 
                 <p>The company wound down in 2024.</p>
 
                 <!-- Optional: one line on why it wound down. -->
 
-                <p>I learned more in those three years than in the five before them, mostly about how far a good thesis is from a paying customer.</p>
+                <p>I learned more in those three years than in the five before them, mostly about the distance between a good thesis and a paying customer.</p>
 
-                <a class="case-link" href="#top">Back to selected work</a>
+                <a class="case-link" href="#top">Back to top</a>
             </section>
 
             <h2>Before that</h2>
