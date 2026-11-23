@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="blog/styles.css">
+    <title>Work - Fionn Delahunty</title>
+    <meta name="description" content="Three pieces of product work: measuring quality in voice AI, opening the enterprise segment, and founding Lua Health.">
+    <style>
+        /* Page-specific components for work.html. Base typography, navigation and
+           article styling come from blog/styles.css. */
+
+        html { scroll-behavior: smooth; }
+
+        #top, section[id] { scroll-margin-top: 24px; }
+
+        body { background: #fcfcfc; }
+
+        .section-title {
+            color: #111;
+            display: block;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0;
+            margin-bottom: 14px;
+        }
+
+        .stats {
+            background: #fff;
+            border: 1px solid #ececec;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin: 6px 0 12px;
+            overflow: hidden;
+        }
+
+        .stat {
+            border-right: 1px solid #ececec;
+            min-width: 0;
+            padding: 15px 13px;
+        }
+
+        .stat:last-child { border-right: 0; }
+
+        .stat b {
+            color: #111;
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .stat span {
+            color: #777;
+            display: block;
+            font-size: 11.5px;
+            line-height: 1.35;
+            margin-top: 5px;
+        }
+
+        .note {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.55;
+            margin: 0 0 30px;
+        }
+
+        .work-grid {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin: 0 0 20px;
+        }
+
+        .work-card {
+            background: #fff;
+            border: 1px solid #e3e3e3;
+            border-radius: 8px;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            padding: 18px 17px 16px;
+            text-decoration: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .work-card:hover {
+            border-color: #c7c7c7;
+            box-shadow: 0 6px 18px rgba(17, 17, 17, 0.05);
+        }
+
+        .work-card .card-meta {
+            color: #777;
+            display: block;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 9px;
+            text-transform: uppercase;
+        }
+
+        .work-card h3 {
+            color: #111;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .work-card:hover h3 {
+            color: #666;
+            text-decoration-thickness: 2px;
+        }
+
+        .work-card p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.55;
+            margin: 0 0 14px;
+        }
+
+        .work-card .card-result {
+            color: #111;
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-top: auto;
+        }
+
+        .case {
+            border-top: 1px solid #e8e8e8;
+            margin-top: 44px;
+            padding-top: 38px;
+        }
+
+        .case h2 { margin-top: 0; }
+
+        .case .eyebrow { margin-bottom: 8px; }
+
+        .case-link {
+            color: #777;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 2px;
+            text-decoration: none;
+            text-underline-offset: 3px;
+        }
+
+        .case-link:hover { color: #111; text-decoration: underline; }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .links a {
+            color: #111;
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .links a:hover { color: #666; text-decoration-thickness: 2px; }
+
+        .links a:focus { outline: 2px solid #0066cc; outline-offset: 2px; border-radius: 2px; }
+
+        .work-card:focus { outline: 2px solid #0066cc; outline-offset: 2px; border-radius: 2px; }
+
+        @media (max-width: 760px) {
+            .work-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            article { animation: none; }
+        }
+
+        @media (max-width: 620px) {
+            .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .stat { border-bottom: 1px solid #ececec; }
+            .stat:nth-child(2n) { border-right: 0; }
+            .stat:nth-last-child(-n + 2) { border-bottom: 0; }
+            .stat b { white-space: normal; }
+        }
+    </style>
+</head>
+<body>
+    <main class="page" id="top">
+        <nav class="top-nav" aria-label="Main navigation">
+            <a class="brand" href="./">Fionn Delahunty</a>
+            <div class="nav-links">
+                <a href="./">Home</a>
+                <a href="blog/">Blog</a>
+                <a href="work.html" aria-current="page">Work</a>
+            </div>
+        </nav>
+
+        <article>
+            <header>
+                <span class="eyebrow">2020 to now</span>
+                <h1>Work</h1>
+                <p class="lede">The CV has the dates. This is the longer version.</p>
+            </header>
+
+            <p>My career has mostly been AI products. For a long time that meant explaining what the product actually did before anyone would let it talk to their customers.</p>
+
+            <p>I have been a product manager since 2020 and Head of Product since 2026.</p>
+
+            <p>Synthflow sells software that answers the phone. Our customers are companies with more calls than people. The agents book appointments, chase payments, check order statuses, and pass the call to a human when they get into trouble.</p>
+
+            <p>I joined in 2025 as a senior PM and took over the product organisation in [month]. The team is product managers, product analytics and design, and the roadmap covers the platform, voice and orchestration.</p>
+
+            <div class="stats">
+                <div class="stat"><b>3x</b><span>ARR growth</span></div>
+                <div class="stat"><b>3 &rarr; 105</b><span>enterprise customers</span></div>
+                <div class="stat"><b>30% &rarr; 80%</b><span>conversation CSAT</span></div>
+                <div class="stat"><b>1M+</b><span>calls a week</span></div>
+            </div>
+            <p class="note">Company numbers, not solo ones. Several of us were responsible for them.</p>
+
+            <span class="section-title">Selected work</span>
+
+            <div class="work-grid">
+                <a class="work-card" href="#quality">
+                    <span class="card-meta">Synthflow · 2025 to now</span>
+                    <h3>Measuring quality</h3>
+                    <p>A million calls a week, and no reliable way to tell whether a change had made them better.</p>
+                    <span class="card-result">CSAT 30% to 80%</span>
+                </a>
+                <a class="work-card" href="#enterprise">
+                    <span class="card-meta">Synthflow · 2025 to now</span>
+                    <h3>Selling to enterprise</h3>
+                    <p>Enterprise deals were not being lost in the demo. They were dying in procurement.</p>
+                    <span class="card-result">3 to 105 customers</span>
+                </a>
+                <a class="work-card" href="#lua">
+                    <span class="card-meta">Lua Health · 2021 to 2024</span>
+                    <h3>Lua Health</h3>
+                    <p>A university spinout, a million euro raised, and three years that ended in a wind-down.</p>
+                    <span class="card-result">EUR 1M raised</span>
+                </a>
+            </div>
+
+            <section class="case" id="quality">
+                <span class="eyebrow">Synthflow · Head of Product · 2025 to now</span>
+                <h2>Measuring quality</h2>
+
+                <p>Voice AI is easy to demo and hard to measure. At a million calls a week any single call can sound excellent while plenty of others are going badly, and customers do not experience the average. They experience the worst call they heard that week, and then they ring you.</p>
+
+                <p>We did not have a reliable way to tell whether a change had made things better. A model change, a prompt change, a new voice, a new telephony route: all of it could ship without anything checking the result. Which leaves an argument about quality as an argument about the most recent complaint.</p>
+
+                <p>The first thing we built was a definition of good, written down. [The dimensions], scored by a person first and by a model later, once the model agreed with the people often enough to be trusted. The calls came from production rather than from demos, and we kept a frozen set so the numbers stayed comparable from one month to the next.</p>
+
+                <p>Then we put the whole thing in front of releases. If a change made the score worse, it did not go out.</p>
+
+                <p>Conversation CSAT went from 30% to 80% over [period]. I am careful with that number. The 30% was measured with a thinner instrument than the 80%, so some of the improvement is the product and some of it is the measurement. On the frozen set, [from/to].</p>
+
+                <p>The commercial change was less visible than the dashboard. Sales could put a prospect's own call recordings through the rubric before signing anything, which is a different conversation from promising that the agent is good. Quality became something we could specify.</p>
+
+                <a class="case-link" href="#top">Back to selected work</a>
+            </section>
+
+            <section class="case" id="enterprise">
+                <span class="eyebrow">Synthflow · Head of Product · 2025 to now</span>
+                <h2>Selling to enterprise</h2>
+
+                <p>The product was bought from the bottom up. A team could sign up in an afternoon and get to value before talking to anyone at the company.</p>
+
+                <p>Enterprise procurement then asks for things that have nothing to do with how well the agent talks. Single sign-on, roles, audit logs, data controls, concurrency limits, and a security questionnaire somebody has to answer. None of it is the AI, and any of it can stop a deal.</p>
+
+                <p>We had built for the first meeting and not the second. So I went through the stalled deals and ranked the blockers by the pipeline behind them rather than by how often they came up in conversation.</p>
+
+                <p>We shipped the ones that unblocked the most pipeline first: [the capabilities]. In the order the deals were dying, which was not the order that was most interesting to build.</p>
+
+                <p>Enterprise customers went from 3 to 105, and ARR grew 3x over the same period. Those are company numbers. Product removed the reasons deals stopped. Sales did the rest.</p>
+
+                <a class="case-link" href="#top">Back to selected work</a>
+            </section>
+
+            <section class="case" id="lua">
+                <span class="eyebrow">Lua Health · Co-founder and CEO · 2021 to 2024</span>
+                <h2>Founding Lua Health</h2>
+
+                <p>Lua Health was a university spinout. The idea was to measure how a workforce was doing without sending everybody another annual survey.</p>
+
+                <p>I was CEO. I wrote the first spec, ran discovery with the people who buy wellbeing software, shipped the first version, hired the first engineers and PMs, and raised EUR 1M.</p>
+
+                <p>The person holding the budget is rarely the person with the problem, and the person with the problem rarely wants to be measured. That is a difficult pair of facts to build a product on.</p>
+
+                <p>We got Business Post 30 Under 30 and Slush Top 20. Both are good for morale and do not pay salaries.</p>
+
+                <p>The company wound down in 2024. [Why.]</p>
+
+                <p>I learned more in those three years than in the five before them, mostly about how far a good thesis is from a paying customer.</p>
+
+                <a class="case-link" href="#top">Back to selected work</a>
+            </section>
+
+            <h2>Before that</h2>
+
+            <ul>
+                <li>Jina AI, first product hire, 2021. Neural search, embeddings and developer workflows. I left after a year to start Lua Health.</li>
+                <li>MindDoc Health, product manager, 2020 to 2021. Machine learning for diagnostics in a mental health app with 2.8 million users. Found out what medical device certification does to a roadmap.</li>
+                <li>Insight Centre for Data Analytics, researcher, 2018 to 2020. NLP for mental health. Five publications, two of them first author.</li>
+            </ul>
+
+            <h2>Elsewhere</h2>
+
+            <div class="links">
+                <a href="cv.pdf">CV (PDF)</a>
+                <a href="https://www.linkedin.com/in/fionndelahunty/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/FionnD" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:fionnd@pm.me">Email</a>
+            </div>
+
+        </article>
+
+        <a class="back-link" href="./">Back to home</a>
+    </main>
+</body>
+</html>
