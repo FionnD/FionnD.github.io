@@ -143,6 +143,24 @@
         .case h2 { margin-top: 0; }
 
         .case .eyebrow { margin-bottom: 8px; }
+        .case .stats { margin: 4px 0 22px; }
+        .case .stats.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .role {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.55;
+            margin: 0 0 26px;
+        }
+        .role b { color: #111; font-weight: 600; }
+        .case h3.step {
+            color: #111;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 32px 0 8px;
+        }
+        .case h3.step + p { margin-top: 0; }
+        .case ul { margin-top: 0; }
 
         .case-link {
             color: #777;
@@ -191,6 +209,9 @@
             .stat:nth-child(2n) { border-right: 0; }
             .stat:nth-last-child(-n + 2) { border-bottom: 0; }
             .stat b { white-space: normal; }
+            .case .stats.three { grid-template-columns: 1fr; }
+            .case .stats.three .stat { border-right: 0; border-bottom: 1px solid #ececec; }
+            .case .stats.three .stat:last-child { border-bottom: 0; }
         }
     </style>
 </head>
@@ -209,12 +230,10 @@
             <header>
                 <span class="eyebrow">2020 to now</span>
                 <h1>Work</h1>
-                <p class="lede">The CV has the dates. This is the longer version.</p>
+                <p class="lede">Head of Product at Synthflow. Previously founder of Lua Health. AI products since 2020.</p>
             </header>
 
-            <p>I have built AI products since 2020. For most of that time the job included explaining what the product actually did before anyone would let it talk to their customers.</p>
-
-            <p>Synthflow sells software that answers the phone. Our customers are companies with more calls than people. The agents book appointments, chase payments, check order statuses, and hand the call to a human when they get into trouble.</p>
+            <p>Synthflow builds voice AI agents for companies with more calls than people. The agents book appointments, chase payments, check order statuses, and hand the call to a human when they get into trouble.</p>
 
             <p>I joined in 2025 as a senior PM and have run the product organisation since February 2026: product managers, product analytics and design, across the platform, voice and orchestration.</p>
 
@@ -224,28 +243,28 @@
                 <div class="stat"><b>30% &rarr; 80%</b><span>conversation CSAT</span></div>
                 <div class="stat"><b>1M+</b><span>calls a week</span></div>
             </div>
-            <p class="note">These are company numbers since I joined, and a lot of people earned them. The case studies below cover the part product played.</p>
+            <p class="note">Company outcomes since I joined. Each case below says what I owned.</p>
 
             <span class="section-title">Selected work</span>
 
             <div class="work-grid">
                 <a class="work-card" href="#quality">
-                    <span class="card-meta">Synthflow · 2025 to now</span>
+                    <span class="card-meta">Synthflow · AI quality</span>
                     <h3>Measuring quality</h3>
-                    <p>A million calls a week, and no reliable way to tell whether a change had made them better.</p>
-                    <span class="card-result">CSAT 30% to 80%</span>
-                </a>
-                <a class="work-card" href="#flow">
-                    <span class="card-meta">Synthflow · 2025 to now</span>
-                    <h3>Making agents predictable</h3>
-                    <p>The same caller could take a different path through the same agent. Enterprise buyers noticed.</p>
-                    <span class="card-result">Flow Designer</span>
+                    <p>Raised conversation CSAT from 30% to 80% by building an evaluation framework that gates every release.</p>
+                    <span class="card-result">CSAT 30% &rarr; 80%</span>
                 </a>
                 <a class="work-card" href="#enterprise">
-                    <span class="card-meta">Synthflow · 2025 to now</span>
-                    <h3>Selling to enterprise</h3>
-                    <p>Enterprise deals were not being lost in the demo. They were dying in procurement.</p>
-                    <span class="card-result">3 to 105 customers</span>
+                    <span class="card-meta">Synthflow · Enterprise growth</span>
+                    <h3>Opening enterprise</h3>
+                    <p>Helped take enterprise customers from 3 to 105 by shipping blockers in pipeline order and two market-first integrations.</p>
+                    <span class="card-result">3 &rarr; 105 enterprise customers</span>
+                </a>
+                <a class="work-card" href="#flow">
+                    <span class="card-meta">Synthflow · Agent platform</span>
+                    <h3>Making agents predictable</h3>
+                    <p>Made agents trustworthy for enterprise workflows by co-designing Flow Designer, a hybrid deterministic system.</p>
+                    <span class="card-result">Hybrid deterministic agents</span>
                 </a>
             </div>
 
@@ -253,23 +272,78 @@
                 <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
                 <h2>Measuring quality</h2>
 
-                <p>Voice AI is easy to demo and hard to measure. At a million calls a week, any single call can sound excellent while plenty of others go badly. Customers don&rsquo;t experience the average. They experience the worst call they heard that week, and then they ring you.</p>
+                <div class="stats three">
+                    <div class="stat"><b>30% &rarr; 80%</b><span>conversation CSAT</span></div>
+                    <div class="stat"><b>1M+</b><span>calls a week in scope</span></div>
+                    <div class="stat"><b>Every release</b><span>gated on the score</span></div>
+                </div>
 
-                <p>We had no reliable way to tell whether a change made things better. A new model, a new prompt, a new voice, a new telephony route: any of it could ship without anything checking the result. So every argument about quality was really an argument about the most recent complaint.</p>
+                <p class="role"><b>My role:</b> designed and launched the evaluation framework, and made it a release gate.</p>
 
-                <p>The first thing we built was a written definition of a good call.</p>
+                <h3 class="step">Trigger</h3>
+                <p>Customers judge a voice agent by the worst call they heard that week, then they ring you. Complaints were arriving and we could not say whether the last release had made calls better or worse.</p>
+
+                <h3 class="step">Problem</h3>
+                <p>A new model, prompt, voice or telephony route could ship with nothing checking the result. With no shared definition of a good call, every quality debate was an argument about the most recent complaint, and sales could only promise that the agent was good.</p>
+
+                <h3 class="step">Solution</h3>
+                <ul>
+                    <li>Wrote down what a good call is, as a scoring rubric.</li>
+                    <li>Scored real production calls, first by people and then by a model once it agreed with the people often enough to be trusted.</li>
+                    <li>Kept a fixed comparison set so scores stayed comparable month to month.</li>
+                    <li>Put the score in front of releases: a change that lowered it did not ship.</li>
+                </ul>
 
                 <!-- Optional: name the rubric dimensions here. -->
 
-                <p>Calls were scored by a person first and by a model later, once the model agreed with the people often enough to be trusted. The calls came from production rather than from demos, and we kept a fixed set so the numbers stayed comparable from one month to the next.</p>
+                <h3 class="step">Key decision</h3>
+                <p>Make the score a release gate rather than a dashboard. That costs speed. A score nobody is allowed to ignore was worth more than a faster release train.</p>
 
-                <p>Then we put the whole thing in front of releases. If a change made the score worse, it did not go out.</p>
+                <h3 class="step">Result</h3>
+                <p>Conversation CSAT went from 30% to 80%. The baseline came from a thinner instrument than the 80%, so part of the gain is better measurement as well as a better product. Sales started running prospects&rsquo; own call recordings through the rubric before signature, which turned quality from a promise into a specification.</p>
 
-                <p>Conversation CSAT went from 30% to 80%. I hold that number loosely: the 30% came from a thinner instrument than the 80%, so part of the gain is the product and part is the measurement.</p>
+                <h3 class="step">What I&rsquo;d do differently</h3>
+                <p>Fix the measurement before fixing the product. Because the baseline came from a thinner instrument, I cannot say exactly how much of the 50-point gain was the product.</p>
 
-                <!-- Optional: the score on the fixed set, if you want to show it. -->
+                <a class="case-link" href="#top">Back to selected work</a>
+            </section>
 
-                <p>The bigger change was commercial. Sales could run a prospect&rsquo;s own call recordings through the rubric before anyone signed, which is a different conversation from promising the agent is good. Quality stopped being a claim and became something we could specify.</p>
+            <section class="case" id="enterprise">
+                <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
+                <h2>Opening enterprise</h2>
+
+                <div class="stats">
+                    <div class="stat"><b>3 &rarr; 105</b><span>enterprise customers</span></div>
+                    <div class="stat"><b>3x</b><span>ARR over the same period</span></div>
+                    <div class="stat"><b>100k min/wk</b><span>flagship account unblocked</span></div>
+                    <div class="stat"><b>2</b><span>first-to-market integrations</span></div>
+                </div>
+
+                <p class="role"><b>My role:</b> prioritised and shipped the platform capabilities that opened the enterprise segment, and led both integrations.</p>
+
+                <h3 class="step">Trigger</h3>
+                <p>Enterprise deals were not being lost in the demo. They were stalling afterwards.</p>
+
+                <h3 class="step">Problem</h3>
+                <p>The product was bought bottom-up: a team could sign up in an afternoon without talking to us. Enterprise buyers needed things that have nothing to do with how well the agent talks: single sign-on, roles, audit logs, data controls, concurrency limits, a security questionnaire. Others needed the agent to work where their calls already lived. Any one of these could stop a deal.</p>
+
+                <h3 class="step">Solution</h3>
+                <ul>
+                    <li>Went through the stalled deals and ranked blockers by the pipeline behind them, not by how often they came up, then shipped in that order.</li>
+                    <li>Became the first vendor to integrate Zoom Phone with agent AI, which unblocked a flagship customer doing 100,000 minutes a week.</li>
+                    <li>Moved early when WhatsApp opened up phone calling and became the first voice AI provider on it, opening Latin America.</li>
+                </ul>
+
+                <!-- Optional: the LATAM number (accounts, minutes or pipeline). -->
+
+                <h3 class="step">Key decision</h3>
+                <p>Rank by pipeline value, not by how loudly a request was made. That meant shipping procurement basics ahead of work that was more interesting to build, in the order deals were dying.</p>
+
+                <h3 class="step">Result</h3>
+                <p>Enterprise customers grew from 3 to 105 and ARR grew 3x over the same period. Those are company numbers: product removed the reasons deals stopped, and sales closed them.</p>
+
+                <h3 class="step">What I&rsquo;d do differently</h3>
+                <p>We had built for the first meeting and not the second. I would start the procurement checklist when the first enterprise deal enters the pipeline, not when it stalls.</p>
 
                 <a class="case-link" href="#top">Back to selected work</a>
             </section>
@@ -278,36 +352,29 @@
                 <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
                 <h2>Making agents predictable</h2>
 
-                <p>A language model will happily take a different route through the same conversation twice. In a demo that reads as flexibility. In a customer&rsquo;s refund process it reads as a bug, and enterprise buyers noticed before we had a good answer for them.</p>
+                <p class="role"><b>My role:</b> framed the problem for engineering and co-designed Flow Designer with them.</p>
 
-                <p>The tempting fixes both fail. Write a longer prompt and you are still hoping. Hard-code every path and you have rebuilt the phone tree the customer was trying to get away from.</p>
+                <h3 class="step">Trigger</h3>
+                <p>Enterprise buyers noticed that the same input could take a different path through the same agent.</p>
 
-                <p>I framed the problem for engineering as a product question rather than a model one: which parts of a call does the customer need to be identical every time, and which parts are allowed to sound human? We designed the answer together as Flow Designer. The steps that have to happen in order happen in order, and the model handles the conversation in between.</p>
+                <h3 class="step">Problem</h3>
+                <p>In a demo, that reads as flexibility. In a customer&rsquo;s real workflow, it reads as a bug, and it made agents hard to trust with processes that have to happen the same way every time. Both obvious fixes fail: a longer prompt is still hoping, and hard-coding every path rebuilds the phone tree the customer wanted to escape.</p>
 
-                <!-- Optional: what you personally made (spec, flow model, mock-ups) and what it unlocked. -->
+                <h3 class="step">Solution</h3>
+                <p>Flow Designer, a hybrid deterministic system. The steps that must happen in order happen in order, and the model handles the conversation in between.</p>
 
-                <p>It is the measuring-quality problem from the other side: you cannot score an agent against a definition of good if it will not take the same path twice.</p>
+                <!-- Optional: what you personally made (spec, flow model, mock-ups). -->
 
-                <a class="case-link" href="#top">Back to selected work</a>
-            </section>
+                <h3 class="step">Key decision</h3>
+                <p>Treat determinism as a product decision, not a model setting: decide which parts of a call the customer needs identical every time, and only fix those. Everything else stays conversational.</p>
 
-            <section class="case" id="enterprise">
-                <span class="eyebrow">Synthflow · Senior PM, then Head of Product · 2025 to now</span>
-                <h2>Selling to enterprise</h2>
+                <h3 class="step">Result</h3>
+                <p>Agents that take the same path twice, which is also what makes them measurable against the quality rubric above.</p>
 
-                <p>The product was bought from the bottom up. A team could sign up in an afternoon and get value before talking to anyone at the company.</p>
+                <h3 class="step">What I&rsquo;d do differently</h3>
+                <p>Build determinism and quality measurement as one project. They are the same question asked from two sides: did the agent do what it was supposed to?</p>
 
-                <p>Enterprise procurement asks for things that have nothing to do with how well the agent talks: single sign-on, roles, audit logs, data controls, concurrency limits, and a security questionnaire somebody has to answer. None of it is the AI, and any of it can stop a deal.</p>
-
-                <p>We had built for the first meeting and not the second. So I went through the stalled deals and ranked the blockers by the pipeline behind them rather than by how often they came up in conversation.</p>
-
-                <p>We shipped in the order deals were dying, not the order that was most interesting to build.</p>
-
-                <p>Some blockers had nothing to do with procurement. They were about where the calls already lived. A flagship customer doing 100,000 minutes a week ran its phones on Zoom Phone, so we became the first vendor to integrate it with agent AI. That unblocked the account. When WhatsApp opened up phone calling, we moved early and became the first voice AI provider on it. That opened Latin America, where a lot of customer conversations already happen on WhatsApp.</p>
-
-                <!-- Optional: the LATAM number (accounts, minutes or pipeline). -->
-
-                <p>Enterprise customers went from 3 to 105, and ARR grew 3x over the same period. Product removed the reasons deals stopped. Sales did the rest.</p>
+                <!-- TODO: add an outcome metric (adoption, deals unlocked, error rate) to match the other cases. -->
 
                 <a class="case-link" href="#top">Back to selected work</a>
             </section>
@@ -316,19 +383,33 @@
                 <span class="eyebrow">Lua Health · Co-founder and CEO · 2021 to 2024</span>
                 <h2>Founding Lua Health</h2>
 
-                <p>Lua Health was a university spinout. The idea was to measure how a workforce was doing without sending everybody another annual survey.</p>
+                <div class="stats three">
+                    <div class="stat"><b>EUR 1M</b><span>raised</span></div>
+                    <div class="stat"><b>30 Under 30</b><span>Business Post</span></div>
+                    <div class="stat"><b>Top 20</b><span>Slush startups</span></div>
+                </div>
 
-                <p>As CEO I was also the first product manager. I wrote the first spec, ran discovery with the people who buy wellbeing software, shipped the first version, hired the first engineers and PMs, and raised EUR 1M.</p>
+                <p class="role"><b>My role:</b> CEO and the first product manager. I owned vision, roadmap, discovery, the first release, hiring and fundraising.</p>
 
-                <p>The person holding the budget is rarely the person with the problem, and the person with the problem rarely wants to be measured. That is a hard pair of facts to build a product on.</p>
+                <h3 class="step">Trigger</h3>
+                <p>A university spinout built on clinical research into measuring mental wellbeing.</p>
 
-                <p>We were named in Business Post&rsquo;s 30 Under 30 and the Slush Top 20. Good for morale; neither pays salaries.</p>
+                <h3 class="step">Problem</h3>
+                <p>The standard way to measure how a workforce was doing was another annual survey, and nobody wanted another one.</p>
 
-                <p>The company wound down in 2024.</p>
+                <h3 class="step">Solution</h3>
+                <p>I wrote the first spec, ran discovery with the people who buy wellbeing software, shipped the first version, hired the first engineers and PMs, and raised EUR 1M.</p>
+
+                <h3 class="step">Key decision</h3>
+                <p>Sell to the people who buy wellbeing software, not to the employees whose wellbeing was being measured. It was where the budget was, and it is also where the product&rsquo;s core tension came from.</p>
+
+                <h3 class="step">Result</h3>
+                <p>EUR 1M raised, national and international recognition, and a company that wound down in 2024.</p>
+
+                <h3 class="step">What I&rsquo;d do differently</h3>
+                <p>Test the buyer&ndash;user gap before building. The person holding the budget is rarely the person with the problem, and the person with the problem rarely wants to be measured. I learned more about the distance between a good thesis and a paying customer in those three years than in the five before them.</p>
 
                 <!-- Optional: one line on why it wound down. -->
-
-                <p>I learned more in those three years than in the five before them, mostly about the distance between a good thesis and a paying customer.</p>
 
                 <a class="case-link" href="#top">Back to top</a>
             </section>
@@ -336,9 +417,19 @@
             <h2>Before that</h2>
 
             <ul>
-                <li>Jina AI, first product hire, 2021. Neural search, embeddings and developer workflows. I left after a year to start Lua Health.</li>
-                <li>MindDoc Health, product manager, 2020 to 2021. Machine learning for diagnostics in a mental health app with 2.8 million users. Found out what medical device certification does to a roadmap.</li>
-                <li>Insight Centre for Data Analytics, researcher, 2018 to 2020. NLP for mental health. Five publications, two of them first author.</li>
+                <li><b>Jina AI</b>, first product hire, 2021. Neural search, embeddings and developer workflows. Left after a year to start Lua Health.</li>
+                <li><b>MindDoc Health</b>, product manager, 2020 to 2021. ML-based diagnostics in a mental health app with 2.8 million users, shipped under medical device certification.</li>
+                <li><b>Insight Centre for Data Analytics</b>, researcher, 2018 to 2020. NLP for mental health. Five publications, two as first author.</li>
+            </ul>
+
+            <h2>Talks, writing and recognition</h2>
+
+            <ul>
+                <li>Writing: <a href="blog/cheaper-voice-ai.html">Your Voice AI Is Cheaper. Congratulations.</a> and <a href="blog/pm-coding.html">PMs Should Code, But Not Like That</a>, plus a <a href="blog/">four-part series</a> on AI copilots and MCP.</li>
+                <li>Talks: Dublin Tech Summit 2024, health tech panel. Pitched Lua Health on the Slush 2023 startup stage.</li>
+                <li>Podcasts: DeepRec.ai leadership lab, The Voice Loop.</li>
+                <li>Research: five publications on NLP for mental health, two as first author, including an ACL 2019 workshop paper (SMM4H) and a co-authored study in the Journal of Personality and Social Psychology.</li>
+                <li>Recognition: Business Post 30 Under 30; Slush Top 20 startups.</li>
             </ul>
 
             <h2>Elsewhere</h2>
